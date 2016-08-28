@@ -1,7 +1,11 @@
 <div class="navbar navbar-inverse">
     <ul class="nav navbar-nav">
-        <li class="link"><%= link_to "Users", users_path, class: "navbar-brand"  %></li>
-        <li class="link"><%= link_to "Profile", current_user, class: "navbar-brand"  %></li>
-        <li class="link"><%= link_to "Log out", sign_out_path, method: "delete", class: "navbar-brand"  %></li>
-    </ul>
+        <% if logged_in? %>
+            <li class="link"><%= link_to "Users", users_path, class: "navbar-brand"  %></li>
+            <li class="link"><%= link_to "Profile", current_user, class: "navbar-brand"  %></li>
+            <li class="link"><%= link_to "Log out", sign_out_path, method: "delete", class: "navbar-brand"  %></li>
+        <% else %>
+            <li class="link"><%= link_to "Log in", root_path, class: "navbar-brand"  %></li>
+        <% end %>    
++     </ul>
 </div>
