@@ -1,7 +1,7 @@
 module SessionsHelper
 
-    def sign_in
-        session[:user_id] = @user.id
+    def sign_in(user)
+        session[:user_id] = user.id
     end
     def current_user
         @current_user ||= User.find_by(id: session[:user_id])
@@ -12,8 +12,7 @@ module SessionsHelper
         end
     end
     def logged_in?
-        if !current_user.nil?
-        end
+        !current_user.nil?
     end
     def sign_out
         session.delete(:user_id)
