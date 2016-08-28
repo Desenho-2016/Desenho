@@ -1,23 +1,7 @@
-<header>
-    <div>
-        <nav>
-            <ul>
-                <% if logged_in? %>
-                <li><%= link_to "Users", users_path %></li>
-                <li>
-                    <ul>
-                        <li><%= link_to "Profile", current_user %></li>
-                        <li><%= link_to "Settings",
-                        edit_user_path(current_user) %></li>
-                        <li>
-                            <%= link_to "Log out", sign_out_path, method: "delete" %>
-                        </li>
-                    </ul>
-                </li>
-                <% else %>
-                <li><%= link_to "Log in", root_path %></li>
-                <% end %>
-            </ul>
-        </nav>
-    </div>
-</header>
+<div class="navbar navbar-inverse">
+    <ul class="nav navbar-nav">
+        <li class="link"><%= link_to "Users", users_path, class: "navbar-brand"  %></li>
+        <li class="link"><%= link_to "Profile", current_user, class: "navbar-brand"  %></li>
+        <li class="link"><%= link_to "Log out", sign_out_path, method: "delete", class: "navbar-brand"  %></li>
+    </ul>
+</div>
