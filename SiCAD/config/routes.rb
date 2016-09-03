@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  root 'sessions#new'    
+  root 'sessions#new'
   resources :users
+  resources :disciplines
   get    'sign_in'   => 'sessions#new'
   post   'sign_in'   => 'sessions#create'
   delete 'sign_out'  => 'sessions#destroy'

@@ -1,0 +1,26 @@
+<h1>Cadastro de disciplinas</h1>
+<%= form_for @Discipline do |f| %>
+<p>
+<%= f.label :Nome %> <br />
+<%= f.text_field :disciplineName %>
+</p>
+
+<p>
+<%= f.label :Fluxo %> <br />
+<%= f.text_field :disciplineFlux %>
+</p>
+
+<p>
+<%= f.label :Avaliações %> <br />
+<%= f.text_field :disciplineRevews %>
+</p>
+
+<p>
+<%= f.label :Notas %> <br />
+<%= f.text_field :rating %>
+</p>
+
+<p>
+<%= f.submit %>
+</p>
+<% end %>
