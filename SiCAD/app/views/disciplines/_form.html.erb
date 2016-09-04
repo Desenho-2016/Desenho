@@ -1,7 +1,8 @@
 <%= form_for(@discipline) do |f| %>
   <% if @discipline.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@discipline.errors.count, "error") %> prohibited this discipline from being saved:</h2>
+      <h2>Infelizmente não foi possível completar
+          a ação pois o formulário possui os seguintes erros:</h2>
 
       <ul>
       <% @discipline.errors.full_messages.each do |message| %>
@@ -14,22 +15,28 @@
   <div class="field">
     <%= f.label :Nome %><br>
     <%= f.text_field :disciplineName %>
+    <%= error_tag @discipline, :disciplineName %>
+</div>
   </div>
   <div class="field">
     <%= f.label :Posição  %><br>
     <%= f.text_field :disciplineFlux %>
+    <%= error_tag @discipline, :disciplineFlux %>
   </div>
   <div class="field">
     <%= f.label :Professor %><br>
     <%= f.text_field :disciplineTeacher %>
+    <%= error_tag @discipline, :disciplineTeacher %>
   </div>
   <div class="field">
     <%= f.label :Avaliações %><br>
     <%= f.text_field :disciplineRevews %>
+    <%= error_tag @discipline, :disciplineRevews %>
   </div>
   <div class="field">
     <%= f.label :Notas %><br>
     <%= f.text_area :rating %>
+    <%= error_tag @discipline, :rating %>      
   </div>
   <div class="actions">
     <%= f.submit %>
