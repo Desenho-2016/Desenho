@@ -1,0 +1,39 @@
+pt-BR:
+  signup_mailer:
+    confirm_email:
+      subject: 'sicad.net - Confirme seu email'
+      title: 'Seja bem vindo ao sicad.net!'
+      body: |
+        Seja bem vindo ao sicad.net, %{name}.
+        O sicad.net é um web-site para monitoramento de desempenho
+      confirm_link_html: 'Para você começar a usar o site, acesse o link: %{link}'
+      thanks_html: 'Obrigado por se cadastrar no %{link}.'
+  links:
+
+  users:
+    confirmations:
+      success: Email confirmado com sucesso, obrigado!
+    new:
+      title: Cadastro
+    edit:
+      title: Editar
+    show:
+      title: Mostrar
+
+
+  activerecord:
+    models:
+      user: Usuário
+      discipline:  Disciplina
+    attributes:
+      user:
+        name: Nome
+        email: Email
+        password: Senha
+        password_confirmation: Confirme sua senha
+      discipline:
+        disciplineName: Nome da disciplina
+        disciplineFlux: Posição no fluxo da disciplina
+        disciplineTeacher: Professor
+        disciplineRevews: Avaliações
+        rating: Notas
