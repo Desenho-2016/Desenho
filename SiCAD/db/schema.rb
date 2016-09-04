@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160903145428) do
+ActiveRecord::Schema.define(version: 20160904121128) do
 
   create_table "disciplines", force: :cascade do |t|
     t.string   "disciplineName"
     t.string   "disciplineFlux"
+    t.string   "disciplineTeacher"
     t.string   "disciplineRevews"
-    t.string   "reviewWeight"
     t.text     "rating"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,26 +1,5 @@
-<h1>Cadastro de disciplinas</h1>
-<%= form_for @Discipline do |f| %>
-<p>
-<%= f.label :Nome %> <br />
-<%= f.text_field :disciplineName %>
-</p>
+<h1>New Discipline</h1>
 
-<p>
-<%= f.label :Fluxo %> <br />
-<%= f.text_field :disciplineFlux %>
-</p>
+<%= render 'form' %>
 
-<p>
-<%= f.label :Avaliações %> <br />
-<%= f.text_field :disciplineRevews %>
-</p>
-
-<p>
-<%= f.label :Notas %> <br />
-<%= f.text_field :rating %>
-</p>
-
-<p>
-<%= f.submit %>
-</p>
-<% end %>
+<%= link_to 'Back', disciplines_path %>
