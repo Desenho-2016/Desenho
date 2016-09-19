@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :disciplines
+  resources :periods
+  resources :teachers
   root 'sessions#new'
   resources :users
 
