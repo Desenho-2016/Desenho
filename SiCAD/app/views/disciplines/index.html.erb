@@ -18,8 +18,8 @@
       <tr>
         <td><%= discipline.name %></td>
         <td><%= discipline.amount_credits %></td>
-        <td><%= discipline.teacher %></td>
-        <td><%= discipline.period %></td>
+        <td><%= discipline.teacher.name %></td>
+        <td><%= discipline.period.name %></td>
         <td><%= link_to 'Show', discipline %></td>
         <td><%= link_to 'Edit', edit_discipline_path(discipline) %></td>
         <td><%= link_to 'Destroy', discipline, method: :delete, data: { confirm: 'Are you sure?' } %></td>
