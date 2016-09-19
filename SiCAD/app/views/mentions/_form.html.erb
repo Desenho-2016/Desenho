@@ -1,0 +1,29 @@
+<%= form_for(@mention) do |f| %>
+  <% if @mention.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mention.errors.count, "error") %> prohibited this mention from being saved:</h2>
+
+      <ul>
+      <% @mention.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :value %><br>
+    <%= select("Não sei", "value", ["SR", "II", "MI", "MM", "MS", "SS"], { include_blank: true }) %>
+  </div>
+  
+  
+  
+  <div class="field">
+    <%= f.label :discipline_id %>
+    <%= f.collection_select(:discipline_id, Discipline.all, :id, :name, include_blank: true) %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

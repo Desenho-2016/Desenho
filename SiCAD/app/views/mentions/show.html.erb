@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @mention.value %>
+</p>
+
+<p>
+  <strong>Discipline:</strong>
+  <%= @mention.discipline %>
+</p>
+
+<%= link_to 'Edit', edit_mention_path(@mention) %> |
+<%= link_to 'Back', mentions_path %>

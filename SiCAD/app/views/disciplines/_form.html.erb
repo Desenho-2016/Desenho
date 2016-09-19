@@ -25,7 +25,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :half_id %>
+    <%= f.label :period_id %>
     <%= f.collection_select(:period_id, Period.all, :id, :name, include_blank: true) %>
   </div>
   <div class="actions">

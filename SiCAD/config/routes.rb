@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mentions
   resources :disciplines
   resources :periods
   resources :teachers
