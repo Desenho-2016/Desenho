@@ -1,6 +1,7 @@
 class TeachersController < ApplicationController
   before_action :set_teacher, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  #Colocar aqui autenticação na controller
+  #before_action :authenticate_user!
   # GET /teachers
   # GET /teachers.json
   def index
