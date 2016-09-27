@@ -1,29 +1,38 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Mentions</h1>
-
-<table>
+<%- model_class = Mention -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Value</th>
-      <th>Discipline</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:value) %></th>
+      <th><%= model_class.human_attribute_name(:discipline_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @mentions.each do |mention| %>
       <tr>
+        <td><%= link_to mention.id, mention_path(mention) %></td>
         <td><%= mention.value %></td>
-        <td><%= mention.discipline %></td>
-        <td><%= link_to 'Show', mention %></td>
-        <td><%= link_to 'Edit', edit_mention_path(mention) %></td>
-        <td><%= link_to 'Destroy', mention, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= mention.discipline_id %></td>
+        <td><%=l mention.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_mention_path(mention), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      mention_path(mention),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Mention', new_mention_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_mention_path,
+            :class => 'btn btn-primary' %>

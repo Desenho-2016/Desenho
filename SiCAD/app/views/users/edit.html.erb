@@ -1,6 +1,5 @@
-<h3 class="text-center">Editar</h3>
-<%= render 'form' %>
-<ul>
-    <li><%= link_to "Edit", edit_user_path(current_user) %></li>
-    <li><%= link_to "Delete", @user, method: :delete%></li>
-</ul>
+<%- model_class = User -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+<%= render :partial => 'form' %>

@@ -1,29 +1,41 @@
-<%= form_for(@mention) do |f| %>
-  <% if @mention.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@mention.errors.count, "error") %> prohibited this mention from being saved:</h2>
+<%= form_for @mention, :html => { :class => "form-horizontal mention" } do |f| %>
 
-      <ul>
-      <% @mention.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if @mention.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@mention.errors.count, "error") %> prohibited this mention from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @mention.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :value %><br>
-    <%= select("mention", "value", ["SR", "II", "MI", "MM", "MS", "SS"], { include_blank: true }) %>
+  <div class="form-group">
+    <%= f.label :value, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :value, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:value) %>
   </div>
-  
-  
-  
-  <div class="field">
-    <%= f.label :discipline_id %>
-    <%= f.collection_select(:discipline_id, Discipline.all, :id, :name, include_blank: true) %>
+  <div class="form-group">
+    <%= f.label :discipline_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :discipline_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:discipline_id) %>
   </div>
-  
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                mentions_path, :class => 'btn btn-default' %>
+    </div>
   </div>
+
 <% end %>
