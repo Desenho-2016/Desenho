@@ -33,7 +33,7 @@
     <div class="form-group">
       <%= f.label :period_id, :class => 'control-label col-lg-2' %>
       <div class="col-lg-10">
-        <%= f.collection_select :period_id, Period.all, :id, :name, {include_blank: true}, {:class => 'form-control'} %>
+        <%= f.collection_select :period_id, Period.all, :id, :semester, {include_blank: true}, {:class => 'form-control'} %>
       </div>
       <%=f.error_span(:period_id) %>
     </div>

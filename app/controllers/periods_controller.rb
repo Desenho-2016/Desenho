@@ -2,7 +2,7 @@ class PeriodsController < ApplicationController
   before_action :set_period, only: [:show, :edit, :update, :destroy]
   #Colocar aqui autenticação na controller
   #before_action :authenticate_user!
-  
+
   # GET /periods
   # GET /periods.json
   def index
@@ -71,6 +71,6 @@ class PeriodsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def period_params
-      params.require(:period).permit(:name, :start, :finish)
+      params.require(:period).permit(:semester)
     end
 end

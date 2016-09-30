@@ -35,9 +35,7 @@ ActiveRecord::Schema.define(version: 20160919142809) do
   add_index "mentions", ["period_id"], name: "index_mentions_on_period_id"
 
   create_table "periods", force: :cascade do |t|
-    t.string   "name"
-    t.date     "start"
-    t.date     "finish"
+    t.string   "semester"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
