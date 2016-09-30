@@ -1,4 +1,4 @@
-<%= form_for @user, :html => { :class => "form-horizontal user" } do |f| %>
+<%= form_for @user, :html => { :class => "form-horizontal col-lg-12" } do |f| %>
 
   <% if @user.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -30,26 +30,20 @@
     <%=f.error_span(:email) %>
   </div>
   <div class="form-group">
-    <%= f.label :password_digest, :class => 'control-label col-lg-2' %>
+    <%= f.label :password, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :password_digest, :class => 'form-control' %>
+      <%= f.password_field :password, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:password_digest) %>
+    <%=f.error_span(:password) %>
   </div>
   <div class="form-group">
-    <%= f.label :confirmed_at, :class => 'control-label col-lg-2' %>
+    <%= f.label :password_confirmation, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :confirmed_at, :class => 'form-control' %>
+      <%= f.password_field :password_confirmation, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:confirmed_at) %>
+    <%=f.error_span(:password_confirmation) %>
   </div>
-  <div class="form-group">
-    <%= f.label :confirmation_token, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :confirmation_token, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:confirmation_token) %>
-  </div>
+
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
