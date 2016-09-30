@@ -1,9 +1,18 @@
-# SiCAD
+##SiCAD
 
-## Sistema de Compartilhamento e Avaliação de Desempenho
+##O SiCAD, Sistema de Compartilhamento e Avaliação de Desempenho, consiste em um _website_, desenvolvido e mantido por estudantes do curso Engenharia de Software da Universidade de Brasília.
 
-> ###O sistema consiste num software que realiza o monitoramento de desempenho dealunos da Universidade de Brasília, mais precisamente, os alunos situados no campus Gama. Este sistema se propõe a oferecer ferramentas que auxiliem o aluno no planejamento de seus estudos, bem como no monitoramento de seu rendimento acadêmico.
+* Versão Ruby  = 2.2.1
+* Versão Rails = 4.2.7
 
- 
-[![Code Climate](https://codeclimate.com/github/Desenho-2016/SiCAD/badges/gpa.svg)](https://codeclimate.com/github/Desenho-2016/SiCAD)  <a href="https://codeclimate.com/github/Desenho-2016/SiCAD/coverage"><img src="https://codeclimate.com/github/Desenho-2016/SiCAD/badges/coverage.svg" /></a>
+###Instruções para execução do projeto
 
+Após o download do projeto, entre na pasta do projeto e execute os seguintes comandos:
+* bundle install = instala todas as dependências do projeto
+* rake db:create = cria o banco de dados
+* rake db:migrate = realiza a migração das tabelas do banco
+* rails s = inicializa o servidor de desenvolvimento
+* Para visualizar a aplicação sendo executada, abra o endereço <localhost:3000>
+
+
+Para mais informações sobre o projeto acesse: <https://github.com/Desenho-2016/SiCAD/wiki>
