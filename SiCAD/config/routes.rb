@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'grafics/home'
+
   resources :mentions
   resources :disciplines
   resources :periods
