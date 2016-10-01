@@ -4,6 +4,7 @@ class CreateMentions < ActiveRecord::Migration
       t.string :value
       t.references :discipline, index: true, foreign_key: true
       t.references :period, index: true, foreign_key: true
+      t.references :teacher, index: true, foreign_key: true
 
       t.timestamps null: false
     end

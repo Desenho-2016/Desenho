@@ -8,6 +8,7 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:value) %></th>
       <th><%= model_class.human_attribute_name(:discipline_id) %></th>
+      <th><%= model_class.human_attribute_name(:teacher_id) %></th>
       <th><%= model_class.human_attribute_name(:period_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -19,6 +20,7 @@
         <td><%= link_to mention.id, mention_path(mention) %></td>
         <td><%= mention.value %></td>
         <td><%= mention.discipline_id %></td>
+        <td><%= mention.teacher_id %></td>
         <td><%= mention.period_id %></td>
         <td><%=l mention.created_at %></td>
         <td>
