@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "disciplines/new_professor" => 'disciplines#new_professor', :as => :new_professor
   resources :mentions
   resources :disciplines
   resources :periods
