@@ -6,7 +6,10 @@ class Ability
       can :read, :all
     elsif user.type_user == 'visitor'
       cannot :manage, Period
-      cannot :manage, Discipline
+      can :read, Discipline
+      cannot :create, Discipline
+      cannot :update, Discipline
+      cannot :destroy, Discipline
       cannot :manage, Teacher
       cannot :manage, User
       cannot :manage, Session

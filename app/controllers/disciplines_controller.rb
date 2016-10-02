@@ -52,6 +52,10 @@ class DisciplinesController < ApplicationController
     end
   end
 
+  def create_professor
+
+  end
+
   # DELETE /disciplines/1
   # DELETE /disciplines/1.json
   def destroy
