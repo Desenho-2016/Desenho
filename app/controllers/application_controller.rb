@@ -14,4 +14,7 @@ class ApplicationController < ActionController::Base
           redirect_to users_path
         end
     end
+    rescue_from CanCan::AccessDenied do |exception|
+      redirect_to :users
+    end
 end

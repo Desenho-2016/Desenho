@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160919142809) do
+ActiveRecord::Schema.define(version: 20161002015150) do
 
   create_table "disciplines", force: :cascade do |t|
     t.string   "name"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20160919142809) do
     t.string   "password_digest"
     t.datetime "confirmed_at"
     t.string   "confirmation_token"
+    t.string   "type_user"
   end
 
 end
