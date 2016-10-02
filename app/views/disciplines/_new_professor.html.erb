@@ -8,11 +8,12 @@
     <div class="modal-body">
       <div class="form-group">
         <input class="form-control" id="teacher_name" name="teacher[name]" type="text_field">
+        <input class="form-control" id="modal_value" type="hidden" name="modal" value="true">
       </div>
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
-      <input class="btn btn-primary" commit="Criar Teacher" type="submit" value="Criar Teacher">
+      <%= button_to "Criar Teacher", create_teacher_path , :method => :post, :class => "btn btn-primary" %>
     </div>
   </div>
 </div>

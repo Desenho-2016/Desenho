@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :disciplines
   resources :periods
   resources :teachers
+  post '/teachers/new' => 'teachers#create', :as => :create_teacher
   root 'sessions#new'
   resources :users
 

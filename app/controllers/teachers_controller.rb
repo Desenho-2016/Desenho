@@ -25,17 +25,22 @@ class TeachersController < ApplicationController
   # POST /teachers
   # POST /teachers.json
   def create
-    puts "="*80
-    p @teacher
     @teacher = Teacher.new(teacher_params)
 
-    respond_to do |format|
+    if params[:modal] == "true"
       if @teacher.save
-        format.html { redirect_to @teacher, notice: 'Teacher was successfully created.' }
-        format.json { render :show, status: :created, location: @teacher }
+        redirect_to :new_discipline
       else
-        format.html { render :new }
-        format.json { render json: @teacher.errors, status: :unprocessable_entity }
+      end
+    else
+      respond_to do |format|
+        if @teacher.save
+          format.html { redirect_to @teacher, notice: 'Teacher was successfully created.' }
+          format.json { render :show, status: :created, location: @teacher }
+        else
+          format.html { render :new }
+          format.json { render json: @teacher.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
