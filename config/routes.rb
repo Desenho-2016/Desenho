@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  get 'home/index'
 
+  get 'home/index'
+  get "disciplines/new_professor" => 'disciplines#new_professor', :as => :new_professor
   resources :mentions
   resources :disciplines
   resources :periods
   resources :teachers
+  post '/teachers/new' => 'teachers#create', :as => :create_teacher
   root 'sessions#new'
   resources :users
 

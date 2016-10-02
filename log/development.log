@@ -8519,3 +8519,831 @@ Processing by HomeController#index as HTML
   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
   Rendered layouts/_header.html.erb (1.1ms)
 Completed 200 OK in 56ms (Views: 55.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/disciplines/new_professor" for 127.0.0.1 at 2016-10-02 11:16:26 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DisciplinesController#new_professor as JS
+  Rendered disciplines/_new_professor.html.erb (1.8ms)
+  Rendered disciplines/new_professor.js.erb (22.8ms)
+Completed 200 OK in 129ms (Views: 96.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2016-10-02 11:16:28 -0300
+Processing by TeachersController#create as HTML
+  Parameters: {"teacher"=>{"name"=>"aaa"}, "modal"=>"true", "authenticity_token"=>"XHvP64MVJV9N9oxCjhsasBERhpmqUuEFwqlyuosaaSfg93DzBbCslnigXcUGcRUs07vjQtIOI201++9xAaPQ/w=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "teachers" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "aaa"], ["created_at", "2016-10-02 14:16:28.887135"], ["updated_at", "2016-10-02 14:16:28.887135"]]
+  [1m[35m (223.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/disciplines/new
+Completed 302 Found in 409ms (ActiveRecord: 224.9ms)
+
+
+Started GET "/disciplines/new" for 127.0.0.1 at 2016-10-02 11:16:29 -0300
+Processing by DisciplinesController#new as HTML
+  Rendered disciplines/_form.html.erb (55.4ms)
+  Rendered disciplines/new.html.erb within layouts/application (158.0ms)
+Completed 500 Internal Server Error in 192ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `teacher_id' for #<Discipline:0x00000003122db8>):
+    32:   <div class="form-group">
+    33:     <%= f.label :teacher_id, :class => 'control-label col-lg-2' %>
+    34:     <div class="col-lg-10">
+    35:       <%= f.collection_select :teacher_id, Teacher.all, :id, :name, {include_blank: true}, {class: 'form-control'} %>
+    36:     </div>
+    37:     <%=f.error_span(:teacher_id) %>
+    38:   </div>
+  app/views/disciplines/_form.html.erb:35:in `block in _app_views_disciplines__form_html_erb__2786743510863560645_25307780'
+  app/views/disciplines/_form.html.erb:1:in `_app_views_disciplines__form_html_erb__2786743510863560645_25307780'
+  app/views/disciplines/new.html.erb:5:in `_app_views_disciplines_new_html_erb___2493218418757621947_25643440'
+
+
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.5ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.8ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (48.0ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (30.2ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (58.8ms)
+  [1m[36m (236.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (220.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20160827021221)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160827021221"]]
+  [1m[35m (197.2ms)[0m  commit transaction
+Migrating to AddPasswordDigestToUsers (20160827021356)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "users" ADD "password_digest" varchar
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160827021356"]]
+  [1m[35m (218.5ms)[0m  commit transaction
+Migrating to AddIndexToUsersEmail (20160827021518)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160827021518"]]
+  [1m[36m (197.5ms)[0m  [1mcommit transaction[0m
+Migrating to AddConfirmationFieldsToUsers (20160904194228)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "users" ADD "confirmed_at" datetime[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" ADD "confirmation_token" varchar
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160904194228"]]
+  [1m[35m (203.0ms)[0m  commit transaction
+Migrating to CreateTeachers (20160919140356)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "teachers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160919140356"]]
+  [1m[35m (215.6ms)[0m  commit transaction
+Migrating to CreatePeriods (20160919140412)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "periods" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "semester" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160919140412"]]
+  [1m[35m (304.2ms)[0m  commit transaction
+Migrating to CreateDisciplines (20160919140436)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (3.9ms)[0m  CREATE TABLE "disciplines" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "amount_credits" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160919140436"]]
+  [1m[35m (204.1ms)[0m  commit transaction
+Migrating to CreateMentions (20160919142809)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "mentions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" varchar, "discipline_id" integer, "period_id" integer, "teacher_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_mentions_on_discipline_id" ON "mentions" ("discipline_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_mentions_on_discipline_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_mentions_on_discipline_id' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE  INDEX "index_mentions_on_period_id" ON "mentions" ("period_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_mentions_on_period_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_mentions_on_period_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_mentions_on_discipline_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_mentions_on_discipline_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_mentions_on_teacher_id" ON "mentions" ("teacher_id")
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160919142809"]]
+  [1m[35m (199.0ms)[0m  commit transaction
+Migrating to AddFieldsToUser (20161002015150)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "users" ADD "type_user" varchar DEFAULT 'visitor'
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161002015150"]]
+  [1m[35m (185.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_mentions_on_teacher_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_mentions_on_teacher_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_mentions_on_period_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_mentions_on_period_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_mentions_on_discipline_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_mentions_on_discipline_id' AND type='index'
+
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-02 11:18:49 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered sessions/new.html.erb within layouts/application (157.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (2.6ms)
+Completed 200 OK in 4643ms (Views: 4548.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-02 11:18:54 -0300
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered sessions/new.html.erb within layouts/application (2.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 103ms (Views: 101.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-02 11:18:54 -0300
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 103ms (Views: 99.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-02 11:18:54 -0300
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-02 11:18:54 -0300
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-10-02 11:18:59 -0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (14.0ms)
+  Rendered users/new.html.erb within layouts/application (17.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 147ms (Views: 129.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-02 11:19:08 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2ZhxmUxxGjVpiLN+PCevnymuwlEYJLPf8yiZuH5xByllFM6BytST/FzeYvm0TaAD6wSnimB4cbcEegRz9Mi+8Q==", "user"=>{"name"=>"sabryna", "email"=>"sabryna@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar Usuário"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('sabryna@gmail.com') LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "confirmation_token") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "sabryna"], ["email", "sabryna@gmail.com"], ["password_digest", "$2a$10$8ntiabZMjRWjRZcgKwMSOOUx6aDwQHYIOKZqd.sYhqYkzvKqH2VGy"], ["created_at", "2016-10-02 14:19:08.357535"], ["updated_at", "2016-10-02 14:19:08.357535"], ["confirmation_token", "OqtXYHw0mgjsDjhq7MUhDg"]]
+  [1m[35m (221.7ms)[0m  commit transaction
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from create at /home/sabryna/Desenho/SiCAD/app/controllers/users_controller.rb:13)
+  Rendered signup_mailer/confirm_email.html.erb (2.9ms)
+  Rendered signup_mailer/confirm_email.text.erb (2.0ms)
+
+SignupMailer#confirm_email: processed outbound mail in 479.2ms
+
+Sent mail to sabryna@gmail.com (66.0ms)
+Date: Sun, 02 Oct 2016 11:19:09 -0300
+From: no-reply@sicad.net
+To: sabryna@gmail.com
+Message-ID: <57f1175d22405_244d3fab9bfbde4426a9@sabryna-pc.mail>
+Subject: sicad.net - Confirme seu email
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_57f1175d194eb_244d3fab9bfbde442554";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_57f1175d194eb_244d3fab9bfbde442554
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Seja bem vindo ao sicad.net!
+Seja bem vindo ao sicad.net, sabryna.
+O sicad.net =C3=A9 um web-site para monitoramento de desempenho
+
+Para voc=C3=AA come=C3=A7ar a usar o site, acesse o link: http://localhos=
+t:3000/confirmation?token=3DOqtXYHw0mgjsDjhq7MUhDg
+Obrigado por se cadastrar no http://localhost:3000/.
+
+----==_mimepart_57f1175d194eb_244d3fab9bfbde442554
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<h1>Seja bem vindo ao sicad.net! </h1>
+<p>
+Seja bem vindo ao sicad.net, sabryna.
+O sicad.net =C3=A9 um web-site para monitoramento de desempenho
+
+</p>
+<p>
+Para voc=C3=AA come=C3=A7ar a usar o site, acesse o link: <a href=3D"http=
+://localhost:3000/confirmation?token=3DOqtXYHw0mgjsDjhq7MUhDg">http://loc=
+alhost:3000/confirmation?token=3DOqtXYHw0mgjsDjhq7MUhDg</a>
+</p>
+<p>
+Obrigado por se cadastrar no <a href=3D"http://localhost:3000/">Sicad.net=
+</a>.
+</p>
+
+----==_mimepart_57f1175d194eb_244d3fab9bfbde442554--
+
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 1019ms (ActiveRecord: 222.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2016-10-02 11:19:09 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-02 11:19:09 -0300
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 80ms (Views: 78.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2016-10-02 11:19:16 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NDKRjjifZyS/feUr0vOHnw7iPr9VcZASDS8z9GcxCLuIvi6Wvjru7YorNKxamYgDzEhbZC0tUnr6fa4/7YixYw==", "session"=>{"email"=>"sabryna@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "sabryna@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 229ms (Views: 79.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2016-10-02 11:19:23 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rKaOi4QmBbF2Gi1XztZvvM/JRWy53+ZVUbBEAy4f30oQKjGTAoOMeENM/NBGvGAgDWMgt8GDJD2m4tnIpKZmkg==", "session"=>{"email"=>"sabryna@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "sabryna@gmail.com"]]
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 147ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2016-10-02 11:19:23 -0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 83ms (Views: 82.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mentions" for 127.0.0.1 at 2016-10-02 11:19:28 -0300
+Processing by MentionsController#index as HTML
+  [1m[35mMention Load (0.7ms)[0m  SELECT "mentions".* FROM "mentions"
+  Rendered mentions/index.html.erb within layouts/application (11.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 94ms (Views: 86.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2016-10-02 11:19:29 -0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 93ms (Views: 91.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2016-10-02 11:19:32 -0300
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/users
+Filter chain halted as :block_access rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-02 11:19:32 -0300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (16.2ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 101ms (Views: 99.1ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2016-10-02 11:19:33 -0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Ef1GBZNc6b0ln+kF18g+SKrSbhIev074IoFc4lbLraatcfkdFflgdBDJOIJfojHUaHgLyWbjjJDV08Ep3HIUfg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-02 11:19:33 -0300
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (2.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (2.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 100ms (Views: 95.2ms | ActiveRecord: 3.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('sabryna@gmail.com') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "users" SET "type_user" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["type_user", "admin"], ["updated_at", "2016-10-02 14:20:17.747229"], ["id", 1]]
+  [1m[36m (228.7ms)[0m  [1mcommit transaction[0m
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2016-10-02 11:20:36 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5sfJq7xZZDPLh+BmO+AHL6bui9+Ncj9tKgEaBMhew39aS3azOvzt+v7RMeGzigizZETuBPUu/QXdU4fPQud6pw==", "session"=>{"email"=>"sabryna@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "sabryna@gmail.com"]]
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 186ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2016-10-02 11:20:36 -0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (3.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (6.9ms)
+Completed 200 OK in 553ms (Views: 552.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/disciplines" for 127.0.0.1 at 2016-10-02 11:20:39 -0300
+Processing by DisciplinesController#index as HTML
+  [1m[36mDiscipline Load (0.3ms)[0m  [1mSELECT "disciplines".* FROM "disciplines"[0m
+  Rendered disciplines/index.html.erb within layouts/application (37.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 131ms (Views: 116.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/disciplines/new" for 127.0.0.1 at 2016-10-02 11:20:40 -0300
+Processing by DisciplinesController#new as HTML
+  Rendered disciplines/_form.html.erb (33.3ms)
+  Rendered disciplines/new.html.erb within layouts/application (43.2ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `teacher_id' for #<Discipline:0x007f9c1e89c990>):
+    32:   <div class="form-group">
+    33:     <%= f.label :teacher_id, :class => 'control-label col-lg-2' %>
+    34:     <div class="col-lg-10">
+    35:       <%= f.collection_select :teacher_id, Teacher.all, :id, :name, {include_blank: true}, {class: 'form-control'} %>
+    36:     </div>
+    37:     <%=f.error_span(:teacher_id) %>
+    38:   </div>
+  app/views/disciplines/_form.html.erb:35:in `block in _app_views_disciplines__form_html_erb__3274972494680251694_70154252158360'
+  app/views/disciplines/_form.html.erb:1:in `_app_views_disciplines__form_html_erb__3274972494680251694_70154252158360'
+  app/views/disciplines/new.html.erb:5:in `_app_views_disciplines_new_html_erb___52965309861544334_70154252094640'
+
+
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.3ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.8ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (45.5ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (28.5ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (55.6ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_mentions_on_teacher_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_mentions_on_teacher_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_mentions_on_period_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_mentions_on_period_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_mentions_on_discipline_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_mentions_on_discipline_id' AND type='index'
+[0m
+
+
+Started GET "/disciplines/new" for 127.0.0.1 at 2016-10-02 11:21:34 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DisciplinesController#new as HTML
+  Rendered disciplines/_form.html.erb (31.2ms)
+  Rendered disciplines/new.html.erb within layouts/application (53.4ms)
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (undefined method `teacher_id' for #<Discipline:0x000000033b7308>):
+    32:   <div class="form-group">
+    33:     <%= f.label :teacher_id, :class => 'control-label col-lg-2' %>
+    34:     <div class="col-lg-10">
+    35:       <%= f.collection_select :teacher_id, Teacher.all, :id, :name, {include_blank: true}, {class: 'form-control'} %>
+    36:     </div>
+    37:     <%=f.error_span(:teacher_id) %>
+    38:   </div>
+  app/views/disciplines/_form.html.erb:35:in `block in _app_views_disciplines__form_html_erb___4352242676703258040_69862847246120'
+  app/views/disciplines/_form.html.erb:1:in `_app_views_disciplines__form_html_erb___4352242676703258040_69862847246120'
+  app/views/disciplines/new.html.erb:5:in `_app_views_disciplines_new_html_erb__2811585020822785935_26942000'
+
+
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.1ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.6ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (45.7ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.8ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (32.2ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (60.9ms)
+  [1m[36m (238.5ms)[0m  [1mDROP TABLE "disciplines"[0m
+  [1m[35m (222.0ms)[0m  CREATE TABLE "disciplines" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "amount_credits" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (210.7ms)[0m  [1mDROP TABLE "mentions"[0m
+  [1m[35m (210.6ms)[0m  CREATE TABLE "mentions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" varchar, "discipline_id" integer, "period_id" integer, "teacher_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (191.0ms)[0m  CREATE  INDEX "index_mentions_on_discipline_id" ON "mentions" ("discipline_id")
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_mentions_on_discipline_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_mentions_on_discipline_id' AND type='index'
+[0m
+  [1m[35m (186.4ms)[0m  CREATE  INDEX "index_mentions_on_period_id" ON "mentions" ("period_id")
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_mentions_on_period_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_mentions_on_period_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_mentions_on_discipline_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_mentions_on_discipline_id' AND type='index'
+
+  [1m[36m (196.9ms)[0m  [1mCREATE  INDEX "index_mentions_on_teacher_id" ON "mentions" ("teacher_id")[0m
+  [1m[35m (198.5ms)[0m  DROP TABLE "periods"
+  [1m[36m (199.9ms)[0m  [1mCREATE TABLE "periods" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "semester" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (198.7ms)[0m  DROP TABLE "teachers"
+  [1m[36m (222.2ms)[0m  [1mCREATE TABLE "teachers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (231.6ms)[0m  DROP TABLE "users"
+  [1m[36m (213.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar, "confirmed_at" datetime, "confirmation_token" varchar, "type_user" varchar DEFAULT 'visitor') [0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (285.5ms)[0m  [1mCREATE TABLE "disciplines" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "amount_credits" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (211.7ms)[0m  CREATE TABLE "mentions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" varchar, "discipline_id" integer, "period_id" integer, "teacher_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (230.2ms)[0m  CREATE  INDEX "index_mentions_on_discipline_id" ON "mentions" ("discipline_id")
+  [1m[36m (0.4ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_mentions_on_discipline_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_mentions_on_discipline_id' AND type='index'
+[0m
+  [1m[35m (206.7ms)[0m  CREATE  INDEX "index_mentions_on_period_id" ON "mentions" ("period_id")
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_mentions_on_period_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_mentions_on_period_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_mentions_on_discipline_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_mentions_on_discipline_id' AND type='index'
+
+  [1m[36m (207.9ms)[0m  [1mCREATE  INDEX "index_mentions_on_teacher_id" ON "mentions" ("teacher_id")[0m
+  [1m[35m (198.7ms)[0m  CREATE TABLE "periods" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "semester" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (210.4ms)[0m  [1mCREATE TABLE "teachers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (187.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar, "confirmed_at" datetime, "confirmation_token" varchar, "type_user" varchar DEFAULT 'visitor') 
+  [1m[36m (210.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (232.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (232.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20161002015150')
+  [1m[36m (233.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160827021356')[0m
+  [1m[35m (233.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160919140436')
+  [1m[36m (233.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160904194228')[0m
+  [1m[35m (233.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160827021221')
+  [1m[36m (244.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160919140356')[0m
+  [1m[35m (235.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160919142809')
+  [1m[36m (222.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160827021518')[0m
+  [1m[35m (233.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160919140412')
+
+
+Started GET "/disciplines/new" for 127.0.0.1 at 2016-10-02 11:22:52 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DisciplinesController#new as HTML
+  Rendered disciplines/_form.html.erb (30.2ms)
+  Rendered disciplines/new.html.erb within layouts/application (53.2ms)
+Completed 500 Internal Server Error in 101ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (undefined method `teacher_id' for #<Discipline:0x007f9c3041eca8>):
+    32:   <div class="form-group">
+    33:     <%= f.label :teacher_id, :class => 'control-label col-lg-2' %>
+    34:     <div class="col-lg-10">
+    35:       <%= f.collection_select :teacher_id, Teacher.all, :id, :name, {include_blank: true}, {class: 'form-control'} %>
+    36:     </div>
+    37:     <%=f.error_span(:teacher_id) %>
+    38:   </div>
+  app/views/disciplines/_form.html.erb:35:in `block in _app_views_disciplines__form_html_erb___315176785339823527_70154401728000'
+  app/views/disciplines/_form.html.erb:1:in `_app_views_disciplines__form_html_erb___315176785339823527_70154401728000'
+  app/views/disciplines/new.html.erb:5:in `_app_views_disciplines_new_html_erb__967541759732630925_70154400895300'
+
+
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.1ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.9ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (46.6ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (30.0ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (59.4ms)
+
+
+Started GET "/disciplines/new" for 127.0.0.1 at 2016-10-02 11:22:54 -0300
+Processing by DisciplinesController#new as HTML
+  Rendered disciplines/_form.html.erb (6.8ms)
+  Rendered disciplines/new.html.erb within layouts/application (17.3ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `teacher_id' for #<Discipline:0x007f9c315e69e0>):
+    32:   <div class="form-group">
+    33:     <%= f.label :teacher_id, :class => 'control-label col-lg-2' %>
+    34:     <div class="col-lg-10">
+    35:       <%= f.collection_select :teacher_id, Teacher.all, :id, :name, {include_blank: true}, {class: 'form-control'} %>
+    36:     </div>
+    37:     <%=f.error_span(:teacher_id) %>
+    38:   </div>
+  app/views/disciplines/_form.html.erb:35:in `block in _app_views_disciplines__form_html_erb___315176785339823527_70154401728000'
+  app/views/disciplines/_form.html.erb:1:in `_app_views_disciplines__form_html_erb___315176785339823527_70154401728000'
+  app/views/disciplines/new.html.erb:5:in `_app_views_disciplines_new_html_erb__967541759732630925_70154400895300'
+
+
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.6ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.6ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (50.4ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (37.9ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/sabryna/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (69.8ms)
+  [1m[36m (210.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (288.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20160827021221)
+  [1m[36m (0.7ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160827021221"]]
+  [1m[35m (195.2ms)[0m  commit transaction
+Migrating to AddPasswordDigestToUsers (20160827021356)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "users" ADD "password_digest" varchar
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160827021356"]]
+  [1m[35m (216.7ms)[0m  commit transaction
+Migrating to AddIndexToUsersEmail (20160827021518)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160827021518"]]
+  [1m[36m (206.9ms)[0m  [1mcommit transaction[0m
+Migrating to AddConfirmationFieldsToUsers (20160904194228)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD "confirmed_at" datetime[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "confirmation_token" varchar
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160904194228"]]
+  [1m[35m (218.7ms)[0m  commit transaction
+Migrating to CreateTeachers (20160919140356)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "teachers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160919140356"]]
+  [1m[35m (183.5ms)[0m  commit transaction
+Migrating to CreatePeriods (20160919140412)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "periods" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "semester" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160919140412"]]
+  [1m[35m (221.5ms)[0m  commit transaction
+Migrating to CreateDisciplines (20160919140436)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "disciplines" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "amount_credits" integer, "teacher_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mCREATE  INDEX "index_disciplines_on_teacher_id" ON "disciplines" ("teacher_id")[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160919140436"]]
+  [1m[36m (199.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateMentions (20160919142809)
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "mentions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" varchar, "discipline_id" integer, "period_id" integer, "teacher_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  CREATE  INDEX "index_mentions_on_discipline_id" ON "mentions" ("discipline_id")
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_mentions_on_discipline_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_mentions_on_discipline_id' AND type='index'
+[0m
+  [1m[35m (0.5ms)[0m  CREATE  INDEX "index_mentions_on_period_id" ON "mentions" ("period_id")
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_mentions_on_period_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_mentions_on_period_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_mentions_on_discipline_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_mentions_on_discipline_id' AND type='index'
+
+  [1m[36m (0.6ms)[0m  [1mCREATE  INDEX "index_mentions_on_teacher_id" ON "mentions" ("teacher_id")[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160919142809"]]
+  [1m[36m (219.2ms)[0m  [1mcommit transaction[0m
+Migrating to AddFieldsToUser (20161002015150)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "users" ADD "type_user" varchar DEFAULT 'visitor'[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161002015150"]]
+  [1m[36m (216.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_disciplines_on_teacher_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_disciplines_on_teacher_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_mentions_on_teacher_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_mentions_on_teacher_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_mentions_on_period_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_mentions_on_period_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_mentions_on_discipline_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_mentions_on_discipline_id' AND type='index'
+
+
+
+Started GET "/disciplines/new" for 127.0.0.1 at 2016-10-02 11:27:51 -0300
+Processing by DisciplinesController#new as HTML
+  [1m[35mTeacher Load (0.2ms)[0m  SELECT "teachers".* FROM "teachers"
+  Rendered disciplines/_form.html.erb (15.1ms)
+  Rendered disciplines/new.html.erb within layouts/application (18.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (23.9ms)
+Completed 200 OK in 13104ms (Views: 13086.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/disciplines" for 127.0.0.1 at 2016-10-02 11:28:05 -0300
+Processing by DisciplinesController#index as HTML
+  [1m[35mDiscipline Load (0.3ms)[0m  SELECT "disciplines".* FROM "disciplines"
+  Rendered disciplines/index.html.erb within layouts/application (10.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 136ms (Views: 134.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/disciplines/new" for 127.0.0.1 at 2016-10-02 11:28:09 -0300
+Processing by DisciplinesController#new as HTML
+  [1m[35mTeacher Load (0.2ms)[0m  SELECT "teachers".* FROM "teachers"
+  Rendered disciplines/_form.html.erb (11.7ms)
+  Rendered disciplines/new.html.erb within layouts/application (15.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 109ms (Views: 107.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/disciplines/new_professor" for 127.0.0.1 at 2016-10-02 11:28:13 -0300
+Processing by DisciplinesController#new_professor as JS
+  Rendered disciplines/_new_professor.html.erb (4.2ms)
+  Rendered disciplines/new_professor.js.erb (9.1ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2016-10-02 11:28:17 -0300
+Processing by TeachersController#create as HTML
+  Parameters: {"teacher"=>{"name"=>"aaaa"}, "modal"=>"true", "authenticity_token"=>"gQj1d9Z90NI5Y54qZo8lHDGCcV2g9sedmiWLTPduCAE9hEpvUNhZGww1T63u5SqA8ygUhtiqBfVtdxaHfdex2Q=="}
+  [1m[35m (0.6ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "teachers" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "aaaa"], ["created_at", "2016-10-02 14:28:17.364800"], ["updated_at", "2016-10-02 14:28:17.364800"]]
+  [1m[35m (2511.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/disciplines/new
+Completed 302 Found in 2535ms (ActiveRecord: 2512.5ms)
+
+
+Started GET "/disciplines/new" for 127.0.0.1 at 2016-10-02 11:28:19 -0300
+Processing by DisciplinesController#new as HTML
+  [1m[36mTeacher Load (14.4ms)[0m  [1mSELECT "teachers".* FROM "teachers"[0m
+  Rendered disciplines/_form.html.erb (20.8ms)
+  Rendered disciplines/new.html.erb within layouts/application (23.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 112ms (Views: 96.6ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-02 11:29:49 -0300
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sessions/new.html.erb within layouts/application (5.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 110ms (Views: 103.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2016-10-02 11:29:55 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ce5XfnbmWlOxXFm0ZfRSgJxtPOV0zFnVra2AKDw8fAHNYuhm8EPTmoQKiDPtnl0cXsdZPgyQm71a/x3jtoXF2Q==", "session"=>{"email"=>"sabryna@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "sabryna@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 110ms (Views: 105.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-10-02 11:29:59 -0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (13.2ms)
+  Rendered users/new.html.erb within layouts/application (17.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 141ms (Views: 121.0ms | ActiveRecord: 0.4ms)

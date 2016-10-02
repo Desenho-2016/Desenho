@@ -16,9 +16,12 @@ ActiveRecord::Schema.define(version: 20161002015150) do
   create_table "disciplines", force: :cascade do |t|
     t.string   "name"
     t.integer  "amount_credits"
+    t.integer  "teacher_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
+
+  add_index "disciplines", ["teacher_id"], name: "index_disciplines_on_teacher_id"
 
   create_table "mentions", force: :cascade do |t|
     t.string   "value"
