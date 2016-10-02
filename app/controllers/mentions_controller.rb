@@ -69,6 +69,6 @@ class MentionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mention_params
-      params.require(:mention).permit(:value, :discipline_id, :period_id, :teacher_id)
+      params.require(:mention).permit(:value, :discipline_id, :teacher_id, :semester)
     end
 end

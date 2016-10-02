@@ -33,22 +33,15 @@ ActiveRecord::Schema.define(version: 20161002153703) do
 
   create_table "mentions", force: :cascade do |t|
     t.string   "value"
+    t.string   "semester"
     t.integer  "discipline_id"
-    t.integer  "period_id"
     t.integer  "teacher_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
   add_index "mentions", ["discipline_id"], name: "index_mentions_on_discipline_id"
-  add_index "mentions", ["period_id"], name: "index_mentions_on_period_id"
   add_index "mentions", ["teacher_id"], name: "index_mentions_on_teacher_id"
-
-  create_table "periods", force: :cascade do |t|
-    t.string   "semester"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "teachers", force: :cascade do |t|
     t.string   "name"
