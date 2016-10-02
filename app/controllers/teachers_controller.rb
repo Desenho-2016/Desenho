@@ -25,6 +25,8 @@ class TeachersController < ApplicationController
   # POST /teachers
   # POST /teachers.json
   def create
+    puts "="*80
+    p @teacher
     @teacher = Teacher.new(teacher_params)
 
     respond_to do |format|

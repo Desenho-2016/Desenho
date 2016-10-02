@@ -1,15 +1,19 @@
-<div class="modal-dialog modal-lg" id="myModalLabel">
-
+<form accept-charset="UTF-8" action="/teachers" class="new_teacher" id="new_teacher" method="post">
+<div class="modal-dialog" id="myModalLabel">
+  <div class="modal-content">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
       <h3>Cadastrar Novo Professor</h3>
     </div>
     <div class="modal-body">
-      Campos
+      <div class="form-group">
+        <input class="form-control" id="teacher_name" name="teacher[name]" type="text_field">
+      </div>
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
-      <button class="btn btn-primary">Salvar</button>
+      <input class="btn btn-primary" commit="Criar Teacher" type="submit" value="Criar Teacher">
     </div>
-
+  </div>
 </div>
+</form>
