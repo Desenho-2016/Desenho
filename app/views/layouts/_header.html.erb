@@ -1,9 +1,10 @@
 <div class="navbar navbar-inverse">
     <ul class="nav navbar-nav">
         <% if logged_in? %>
-            <li class="link"><%= link_to "Users", users_path, class: "navbar-brand"  %></li>
-            <li class="link"><%= link_to "Profile", current_user, class: "navbar-brand"  %></li>
+            <li class="link"><%= link_to "Home", home_index_path, class: "navbar-brand"  %></li>
             <% if current_user.type_user == 'admin'%>
+              <li class="link"><%= link_to "Profile", current_user, class: "navbar-brand"  %></li>
+              <li class="link"><%= link_to "Users", users_path, class: "navbar-brand"  %></li>
               <li class="link"><%= link_to "Disciplinas", disciplines_path, class: "navbar-brand"  %></li>
               <li class="link"><%= link_to "Professores", teachers_path, class: "navbar-brand"  %></li>
               <li class="link"><%= link_to "Períodos", periods_path, class: "navbar-brand"  %></li>

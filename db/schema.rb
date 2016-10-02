@@ -48,12 +48,12 @@ ActiveRecord::Schema.define(version: 20161002015150) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.string   "password_digest"
     t.datetime "confirmed_at"
     t.string   "confirmation_token"
-    t.string   "type_user"
+    t.string   "type_user",          default: "visitor"
   end
 
 end
