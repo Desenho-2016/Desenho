@@ -18,7 +18,7 @@
   <div class="form-group">
     <%= f.label :value, :Menção, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= select "mention", "value", ["SR", "II", "MI", "MM", "MS", "SS"], { include_blank: true }, {:class => 'form-control'} %>
+      <%= select "mention", "value", ["SR", "II", "MI", "MM", "MS", "SS"], { include_blank: false }, {:class => 'form-control'} %>
     </div>
     <%=f.error_span(:value) %>
   </div>

@@ -1,4 +1,11 @@
+---
 pt-BR:
+
+  helpers:
+    links:
+      cancel: 'Cancelar'
+      name: 'Nome'
+      new: 'Novo'
   signup_mailer:
     confirm_email:
       subject: 'sicad.net - Confirme seu email'
@@ -14,27 +21,29 @@ pt-BR:
     confirmations:
       success: Email confirmado com sucesso, obrigado!
     new:
-      title: Cadastro
+      title: Cadastrar
     edit:
       title: Editar
     show:
       title: Mostrar
 
-activerecord:
-    models:
-      user: Usuário
-      discipline:  Disciplina
-    attributes:
-      user:
-        name: Nome
-        email: Email
-        password: Senha
-        password_confirmation: Confirme a senha
-      discipline:
-        amount_credits: Número de Créditos
-        teacher_id: Professor
-        disciplineName: Nome da disciplina
-        disciplineFlux: Posição no fluxo da disciplina
-        disciplineTeacher: Professor
-        disciplineRevews: Avaliações
-        rating: Notas
+  activerecord:
+      models:
+        user: Usuário
+        discipline:  Disciplina
+        teacher: Professor
+      attributes:
+        user:
+          name: Nome
+          email: Email
+          password: Senha
+          password_confirmation: Confirme a senha
+        discipline:
+          name: Nome
+          amount_credits: Número de Créditos
+          teacher_id: Professor
+          disciplineName: Nome da disciplina
+          disciplineFlux: Posição no fluxo da disciplina
+          disciplineTeacher: Professor
+          disciplineRevews: Avaliações
+          rating: Notas
