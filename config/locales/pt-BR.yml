@@ -20,8 +20,7 @@ pt-BR:
     show:
       title: Mostrar
 
-
-  activerecord:
+activerecord:
     models:
       user: Usuário
       discipline:  Disciplina
@@ -30,8 +29,10 @@ pt-BR:
         name: Nome
         email: Email
         password: Senha
-        password_confirmation: Confirme sua senha
+        password_confirmation: Confirme a senha
       discipline:
+        amount_credits: Número de Créditos
+        teacher_id: Professor
         disciplineName: Nome da disciplina
         disciplineFlux: Posição no fluxo da disciplina
         disciplineTeacher: Professor
