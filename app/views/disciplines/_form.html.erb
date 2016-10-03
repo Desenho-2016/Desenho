@@ -37,8 +37,8 @@
     <%=f.error_span(:teacher_id) %>
   </div>
 
-  <div>
-    <%= link_to 'Novo professor', new_professor_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-professor'} %>
+  <div align="right">
+    <%= link_to 'Novo professor', new_professor_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-professor', class: "btn btn-default" }%>
   </div>
 
   <div id="modal-professor" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true"></div>

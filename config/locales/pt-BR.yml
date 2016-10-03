@@ -6,6 +6,9 @@ pt-BR:
       cancel: 'Cancelar'
       name: 'Nome'
       new: 'Novo'
+      back: 'Voltar'
+      edit: 'Editar'
+      destroy: 'Deletar'
   signup_mailer:
     confirm_email:
       subject: 'sicad.net - Confirme seu email'
