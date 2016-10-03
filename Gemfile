@@ -64,3 +64,5 @@ end
 gem "twitter-bootstrap-rails"
 
 gem 'cancancan'
+
+gem 'rails-i18n'
