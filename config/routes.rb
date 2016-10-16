@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :periods
   resources :comments
   get 'home/index'
   get "disciplines/new_professor" => 'disciplines#new_professor', :as => :new_professor
   get "disciplines/new_comment" => 'disciplines#new_comment', :as => :new_comment_discipline
   resources :mentions
   resources :disciplines
-  resources :periods
   resources :teachers
   post '/teachers/new' => 'teachers#create', :as => :create_teacher
   post 'disciplines/create_comment_discipline' => 'disciplines#create_comment_discipline'

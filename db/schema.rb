@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161002153703) do
+ActiveRecord::Schema.define(version: 20161016210330) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -25,10 +25,12 @@ ActiveRecord::Schema.define(version: 20161002153703) do
     t.string   "name"
     t.integer  "amount_credits"
     t.integer  "teacher_id"
+    t.integer  "period_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
 
+  add_index "disciplines", ["period_id"], name: "index_disciplines_on_period_id"
   add_index "disciplines", ["teacher_id"], name: "index_disciplines_on_teacher_id"
 
   create_table "mentions", force: :cascade do |t|
@@ -38,10 +40,20 @@ ActiveRecord::Schema.define(version: 20161002153703) do
     t.integer  "teacher_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "period_id"
   end
 
   add_index "mentions", ["discipline_id"], name: "index_mentions_on_discipline_id"
+  add_index "mentions", ["period_id"], name: "index_mentions_on_period_id"
   add_index "mentions", ["teacher_id"], name: "index_mentions_on_teacher_id"
+
+  create_table "periods", force: :cascade do |t|
+    t.string   "name"
+    t.date     "start"
+    t.date     "finish"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "teachers", force: :cascade do |t|
     t.string   "name"
