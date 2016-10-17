@@ -12672,3 +12672,3371 @@ Processing by MentionsController#new as HTML
   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
   Rendered layouts/_header.html.erb (7.6ms)
 Completed 200 OK in 813ms (Views: 791.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/mentions" for 127.0.0.1 at 2016-10-16 22:11:14 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MentionsController#index as HTML
+  [1m[35mMention Load (0.2ms)[0m  SELECT "mentions".* FROM "mentions"
+  Rendered mentions/index.html.erb within layouts/application (388.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (9.9ms)
+Completed 200 OK in 642ms (Views: 628.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/mentions" for 127.0.0.1 at 2016-10-16 22:13:33 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MentionsController#index as HTML
+  [1m[35mMention Load (0.3ms)[0m  SELECT "mentions".* FROM "mentions"
+  Rendered mentions/index.html.erb within layouts/application (431.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (10.8ms)
+Completed 200 OK in 709ms (Views: 695.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/mentions" for 127.0.0.1 at 2016-10-16 22:17:33 -0200
+Processing by MentionsController#index as HTML
+  [1m[35mMention Load (0.4ms)[0m  SELECT "mentions".* FROM "mentions"
+  Rendered mentions/index.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (5.3ms)
+Completed 200 OK in 91ms (Views: 87.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/mentions" for 127.0.0.1 at 2016-10-16 22:17:36 -0200
+Processing by MentionsController#index as HTML
+  [1m[35mMention Load (0.3ms)[0m  SELECT "mentions".* FROM "mentions"
+  Rendered mentions/index.html.erb within layouts/application (5.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 109ms (Views: 107.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/periods" for 127.0.0.1 at 2016-10-16 22:17:44 -0200
+Processing by PeriodsController#index as HTML
+  [1m[35mPeriod Load (0.2ms)[0m  SELECT "periods".* FROM "periods"
+  Rendered periods/index.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 96ms (Views: 90.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/periods/new" for 127.0.0.1 at 2016-10-16 22:17:48 -0200
+Processing by PeriodsController#new as HTML
+  Rendered periods/_form.html.erb (51.9ms)
+  Rendered periods/new.html.erb within layouts/application (53.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 131ms (Views: 113.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/periods" for 127.0.0.1 at 2016-10-16 22:17:57 -0200
+Processing by PeriodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"avoaarE0Ljr2I2m6jMbdN/8m53Ao5u6c5NEQt+RnYE0gBNG1AMN/nar6CMnC9THe+l/NeugP8NAJzK4vXA+Uzw==", "period"=>{"name"=>"", "start(3i)"=>"16", "start(2i)"=>"10", "start(1i)"=>"2016", "finish(3i)"=>"16", "finish(2i)"=>"10", "finish(1i)"=>"2016"}, "commit"=>"Criar Period"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "periods" ("name", "start", "finish", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", ""], ["start", "2016-10-16"], ["finish", "2016-10-16"], ["created_at", "2016-10-17 00:17:57.116290"], ["updated_at", "2016-10-17 00:17:57.116290"]]
+  [1m[36m (96.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/periods/1
+Completed 302 Found in 102ms (ActiveRecord: 96.8ms)
+
+
+Started GET "/periods/1" for 127.0.0.1 at 2016-10-16 22:17:57 -0200
+Processing by PeriodsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPeriod Load (0.5ms)[0m  SELECT  "periods".* FROM "periods" WHERE "periods"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered periods/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 52ms (Views: 48.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/periods" for 127.0.0.1 at 2016-10-16 22:18:02 -0200
+Processing by PeriodsController#index as HTML
+  [1m[35mPeriod Load (0.2ms)[0m  SELECT "periods".* FROM "periods"
+  Rendered periods/index.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 52ms (Views: 51.4ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/periods/1" for 127.0.0.1 at 2016-10-16 22:18:05 -0200
+Processing by PeriodsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HjV3mU1/ZoZn1xqWX1TrLsq/2jdnErCGW+VgIFMU0NhUy7xG/Ig3ITsOe+URZwfHz8bwPaf7rsq2+N6463wkWg==", "id"=>"1"}
+  [1m[35mPeriod Load (0.1ms)[0m  SELECT  "periods".* FROM "periods" WHERE "periods"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "periods" WHERE "periods"."id" = ?  [["id", 1]]
+  [1m[36m (70.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/periods
+Completed 302 Found in 74ms (ActiveRecord: 71.0ms)
+
+
+Started GET "/periods" for 127.0.0.1 at 2016-10-16 22:18:05 -0200
+Processing by PeriodsController#index as HTML
+  [1m[35mPeriod Load (0.3ms)[0m  SELECT "periods".* FROM "periods"
+  Rendered periods/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 50ms (Views: 48.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/periods" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+Processing by PeriodsController#index as HTML
+  [1m[35mPeriod Load (0.4ms)[0m  SELECT "periods".* FROM "periods"
+  Rendered periods/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 84ms (Views: 82.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:19:52 -0200
+
+
+Started GET "/periods/new" for 127.0.0.1 at 2016-10-16 22:19:54 -0200
+Processing by PeriodsController#new as HTML
+  Rendered periods/_form.html.erb (8.7ms)
+  Rendered periods/new.html.erb within layouts/application (10.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 59ms (Views: 57.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/periods/new" for 127.0.0.1 at 2016-10-16 22:23:26 -0200
+Processing by PeriodsController#new as HTML
+  Rendered periods/_form.html.erb (5.0ms)
+  Rendered periods/new.html.erb within layouts/application (5.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (3.8ms)
+Completed 200 OK in 65ms (Views: 59.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:23:27 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:23:27 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:23:27 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:23:27 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:23:27 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:23:27 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:23:27 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:23:27 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:23:27 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:23:27 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:23:27 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:27 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:27 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:27 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:27 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:27 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:27 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:27 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:27 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:27 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:27 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:27 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:27 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:27 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:27 -0200
+
+
+Started GET "/periods/new" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+Processing by PeriodsController#new as HTML
+  Rendered periods/_form.html.erb (4.2ms)
+  Rendered periods/new.html.erb within layouts/application (5.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 66ms (Views: 65.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:23:28 -0200
+
+
+Started GET "/periods/new" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+Processing by PeriodsController#new as HTML
+  Rendered periods/_form.html.erb (4.9ms)
+  Rendered periods/new.html.erb within layouts/application (5.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 59ms (Views: 58.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:55 -0200
+
+
+Started GET "/periods/new" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+Processing by PeriodsController#new as HTML
+  Rendered periods/_form.html.erb (6.2ms)
+  Rendered periods/new.html.erb within layouts/application (7.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 55ms (Views: 54.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:56 -0200
+
+
+Started GET "/periods/new" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+Processing by PeriodsController#new as HTML
+  Rendered periods/_form.html.erb (10.7ms)
+  Rendered periods/new.html.erb within layouts/application (12.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 88ms (Views: 86.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:27:57 -0200
+
+
+Started GET "/periods/new" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+Processing by PeriodsController#new as HTML
+  Rendered periods/_form.html.erb (4.8ms)
+  Rendered periods/new.html.erb within layouts/application (5.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 55ms (Views: 54.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:29:26 -0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-16 22:29:28 -0200
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sessions/new.html.erb within layouts/application (2.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 49ms (Views: 47.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-10-16 22:29:29 -0200
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (3.6ms)
+  Rendered users/new.html.erb within layouts/application (5.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 58ms (Views: 51.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2016-10-16 22:29:33 -0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a2+7+w+qeBSa0OMBtvz8PkGKgECkUyYIGJLlXMYWOsghkXAkvl0ps8YJgnL4zxDXRPOqSmS6OET1j1vEfn7OSg==", "session"=>{"email"=>"ruannawe95@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ruannawe95@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 58ms (Views: 55.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2016-10-16 22:29:35 -0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+D5qGFfUVjw5eFUwm9aG0oHhw404tvVIdhuKsCQkoAKywKHH5iMHm2WhNEPV5Wo7hJjph/hf6wSbBjQonExUgA==", "session"=>{"email"=>"ruannawe95@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ruannawe95@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 56ms (Views: 54.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-10-16 22:29:36 -0200
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (10.9ms)
+  Rendered users/new.html.erb within layouts/application (12.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 64ms (Views: 63.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-16 22:29:42 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MEh2tSNRI23xZXk/n20ASS819zRVjGxyINFs23hwIPd6tr1qkqZyyq28GEzRXuygKkzdPpVlcj7NzNJDwBjUdQ==", "user"=>{"name"=>"Ruan Herculano", "email"=>"ruannawe95@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Cadastrar"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('ruannawe95@gmail.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered users/_form.html.erb (3.7ms)
+  Rendered users/new.html.erb within layouts/application (5.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 170ms (Views: 62.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-16 22:29:52 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"McAlSS77SIBW4TiPM3mre2oP4yAxrEYiAHw0SYjN6Ap7Pu6WnwwZJwo4Wfx9SkeSb3bJKvFFWG7tYYrRMKUciA==", "user"=>{"name"=>"Ruan Herculano", "email"=>"ruannawe95@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Cadastrar"}
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('ruannawe95@gmail.com') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "confirmation_token") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Ruan Herculano"], ["email", "ruannawe95@gmail.com"], ["password_digest", "$2a$10$DRTzNIFIcK72KqGt0lF66uGASUtR6kl.1/EezfFWOcQl184oBXyvC"], ["created_at", "2016-10-17 00:29:52.450008"], ["updated_at", "2016-10-17 00:29:52.450008"], ["confirmation_token", "8k5GFN4rct-YpEj4Jgt22g"]]
+  [1m[35m (89.8ms)[0m  commit transaction
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from create at /home/ruan/Documentos/desenho/SiCAD/app/controllers/users_controller.rb:13)
+  Rendered signup_mailer/confirm_email.html.erb (1.1ms)
+  Rendered signup_mailer/confirm_email.text.erb (0.9ms)
+
+SignupMailer#confirm_email: processed outbound mail in 144.0ms
+
+Sent mail to ruannawe95@gmail.com (8.8ms)
+Date: Sun, 16 Oct 2016 22:29:52 -0200
+From: no-reply@sicad.net
+To: ruannawe95@gmail.com
+Message-ID: <58041b80ab91b_36f83fc320b723ac128f@ruan-VAIO.mail>
+Subject: sicad.net - Confirme seu email
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_58041b80a9f84_36f83fc320b723ac127c3";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_58041b80a9f84_36f83fc320b723ac127c3
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Seja bem vindo ao sicad.net!
+Seja bem vindo ao sicad.net, Ruan Herculano.
+O sicad.net =C3=A9 um web-site para monitoramento de desempenho
+
+Para voc=C3=AA come=C3=A7ar a usar o site, acesse o link: http://localhos=
+t:3000/confirmation?token=3D8k5GFN4rct-YpEj4Jgt22g
+Obrigado por se cadastrar no http://localhost:3000/.
+
+----==_mimepart_58041b80a9f84_36f83fc320b723ac127c3
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<h1>Seja bem vindo ao sicad.net! </h1>
+<p>
+Seja bem vindo ao sicad.net, Ruan Herculano.
+O sicad.net =C3=A9 um web-site para monitoramento de desempenho
+
+</p>
+<p>
+Para voc=C3=AA come=C3=A7ar a usar o site, acesse o link: <a href=3D"http=
+://localhost:3000/confirmation?token=3D8k5GFN4rct-YpEj4Jgt22g">http://loc=
+alhost:3000/confirmation?token=3D8k5GFN4rct-YpEj4Jgt22g</a>
+</p>
+<p>
+Obrigado por se cadastrar no <a href=3D"http://localhost:3000/">Sicad.net=
+</a>.
+</p>
+
+----==_mimepart_58041b80a9f84_36f83fc320b723ac127c3--
+
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 345ms (ActiveRecord: 90.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2016-10-16 22:29:52 -0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 59ms (Views: 56.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2016-10-16 22:30:00 -0200
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 49ms (Views: 48.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2016-10-16 22:30:15 -0200
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 63ms (Views: 61.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 77ms (Views: 75.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:17 -0200
+
+
+Started GET "/home/index" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 51ms (Views: 49.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:30:18 -0200
+
+
+Started GET "/home/index" for 127.0.0.1 at 2016-10-16 22:30:38 -0200
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ruan/Documentos/desenho/SiCAD/app/views/layouts/_header.html.erb:20: syntax error, unexpected keyword_ensure, expecting keyword_end
+/home/ruan/Documentos/desenho/SiCAD/app/views/layouts/_header.html.erb:22: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/layouts/_header.html.erb:20: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/layouts/_header.html.erb:22: syntax error, unexpected end-of-input, expecting keyword_end
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__3652094227000534431_39117120'
+
+
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.8ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.4ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.6ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (34.7ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2016-10-16 22:30:51 -0200
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ruan/Documentos/desenho/SiCAD/app/views/layouts/_header.html.erb:20: syntax error, unexpected keyword_ensure, expecting keyword_end
+/home/ruan/Documentos/desenho/SiCAD/app/views/layouts/_header.html.erb:22: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/layouts/_header.html.erb:20: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/layouts/_header.html.erb:22: syntax error, unexpected end-of-input, expecting keyword_end
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__3652094227000534431_39117120'
+
+
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.9ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.1ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.7ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (37.8ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2016-10-16 22:31:25 -0200
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 95ms (Views: 94.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:31:25 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:31:25 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:31:25 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:31:25 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:31:25 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:31:25 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:31:25 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:31:25 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:31:25 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:31:25 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:31:25 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:31:25 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:31:25 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:31:25 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:31:25 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:31:25 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:31:25 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:31:26 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:31:26 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:31:26 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:31:26 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:31:26 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:31:26 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:31:26 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:31:26 -0200
+
+
+Started GET "/home/index" for 127.0.0.1 at 2016-10-16 22:31:39 -0200
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 59ms (Views: 58.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2016-10-16 22:32:03 -0200
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.9ms)
+Completed 200 OK in 94ms (Views: 92.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2016-10-16 22:33:08 -0200
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  Rendered layouts/_header.html.erb (88249.0ms)
+Completed 200 OK in 88340ms (Views: 88339.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:34:36 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:34:36 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:34:36 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:34:36 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:34:36 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:34:36 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:34:36 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:34:36 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:34:36 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:34:36 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:34:36 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:34:36 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:34:36 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:34:36 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:34:36 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:34:36 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:34:36 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:34:36 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:34:36 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:34:36 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:34:36 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:34:36 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:34:36 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:34:36 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:34:36 -0200
+
+
+Started GET "/home/index" for 127.0.0.1 at 2016-10-16 22:34:40 -0200
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered layouts/_header.html.erb (84606.7ms)
+Completed 200 OK in 84661ms (Views: 84659.5ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2016-10-16 22:36:05 -0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YJeNoq06pCogVMcq0YyTytqX5+O4MYX6h/1chRog19gqaUZ9HM31jXyNplmfv38j3+7N6XjYm7Zq4OIdokgjWg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-16 22:36:05 -0200
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (2057.4ms)
+Completed 200 OK in 2102ms (Views: 2100.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2016-10-16 22:36:12 -0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uvKMbNMa9Jyk9L35vEiTDBgV5Ud6lwv3iW67mxOgLR3wDEezYu2lO/gt3Irye3/lHWzPTbp+FbtkcwUDq8jZnw==", "session"=>{"email"=>"ruannawe95@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ruannawe95@gmail.com"]]
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 87ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2016-10-16 22:36:12 -0200
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (22154.0ms)
+Completed 200 OK in 22202ms (Views: 22201.5ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2016-10-16 22:36:36 -0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JAvtVwfLNALH8sfDBE335tV1w3Vy7Gqh0iTfna6wrbtu9SaItjxlpZsrprBKfhsP0Azpf7IFdO0/OWEFFthZOQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-16 22:36:36 -0200
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered layouts/_header.html.erb (1595.7ms)
+Completed 200 OK in 1647ms (Views: 1645.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-10-16 22:36:40 -0200
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (4.4ms)
+  Rendered users/new.html.erb within layouts/application (5.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1767.8ms)
+Completed 200 OK in 1827ms (Views: 1826.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-16 22:36:55 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JN/eHDY/tFyJabFsHVV6zqHJtHWyY/c3DOz1xbxoII1uIRXDh8jl+9Ww0B9TZpYnpLCef3KK6Xvh8UtdBADUDw==", "user"=>{"name"=>"nicacioneto", "email"=>"admin@pdvend.com.br", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Cadastrar"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('admin@pdvend.com.br') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "confirmation_token") VALUES (?, ?, ?, ?, ?, ?)  [["name", "nicacioneto"], ["email", "admin@pdvend.com.br"], ["password_digest", "$2a$10$P13l6gsaj/KN18WuwKlnuu.0rjZOso.TD/K0cCmidUgwP9t.CLWSS"], ["created_at", "2016-10-17 00:36:55.768262"], ["updated_at", "2016-10-17 00:36:55.768262"], ["confirmation_token", "eYyi8FMhnLLxAmbLYXfgqw"]]
+  [1m[36m (85.7ms)[0m  [1mcommit transaction[0m
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from create at /home/ruan/Documentos/desenho/SiCAD/app/controllers/users_controller.rb:13)
+  Rendered signup_mailer/confirm_email.html.erb (0.6ms)
+  Rendered signup_mailer/confirm_email.text.erb (0.6ms)
+
+SignupMailer#confirm_email: processed outbound mail in 13.9ms
+
+Sent mail to admin@pdvend.com.br (6.2ms)
+Date: Sun, 16 Oct 2016 22:36:55 -0200
+From: no-reply@sicad.net
+To: admin@pdvend.com.br
+Message-ID: <58041d27d4f04_36f83fc322098b28130e1@ruan-VAIO.mail>
+Subject: sicad.net - Confirme seu email
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_58041d27d39f8_36f83fc322098b2812954";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_58041d27d39f8_36f83fc322098b2812954
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Seja bem vindo ao sicad.net!
+Seja bem vindo ao sicad.net, nicacioneto.
+O sicad.net =C3=A9 um web-site para monitoramento de desempenho
+
+Para voc=C3=AA come=C3=A7ar a usar o site, acesse o link: http://localhos=
+t:3000/confirmation?token=3DeYyi8FMhnLLxAmbLYXfgqw
+Obrigado por se cadastrar no http://localhost:3000/.
+
+----==_mimepart_58041d27d39f8_36f83fc322098b2812954
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<h1>Seja bem vindo ao sicad.net! </h1>
+<p>
+Seja bem vindo ao sicad.net, nicacioneto.
+O sicad.net =C3=A9 um web-site para monitoramento de desempenho
+
+</p>
+<p>
+Para voc=C3=AA come=C3=A7ar a usar o site, acesse o link: <a href=3D"http=
+://localhost:3000/confirmation?token=3DeYyi8FMhnLLxAmbLYXfgqw">http://loc=
+alhost:3000/confirmation?token=3DeYyi8FMhnLLxAmbLYXfgqw</a>
+</p>
+<p>
+Obrigado por se cadastrar no <a href=3D"http://localhost:3000/">Sicad.net=
+</a>.
+</p>
+
+----==_mimepart_58041d27d39f8_36f83fc322098b2812954--
+
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 198ms (ActiveRecord: 86.2ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2016-10-16 22:36:55 -0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-16 22:36:55 -0200
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered layouts/_header.html.erb (3951.0ms)
+Completed 200 OK in 3994ms (Views: 3993.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2016-10-16 22:37:11 -0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MbF9u1H6rnWcPQ/KaPnmxmr8xlDQOLV8KNRr0QBD1Bp7T7Zk4A3/0sDkbrkmygovb4XsWhDRqzDFydVJuCsgmA==", "session"=>{"email"=>"admin@pdvend.com.br", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "admin@pdvend.com.br"]]
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 85ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2016-10-16 22:37:11 -0200
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (4517.1ms)
+Completed 200 OK in 4569ms (Views: 4567.9ms | ActiveRecord: 0.2ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+
+
+Started GET "/home/index" for 127.0.0.1 at 2016-10-16 22:37:36 -0200
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered layouts/_header.html.erb (2166.1ms)
+Completed 200 OK in 2221ms (Views: 2219.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:37:38 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:37:38 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:37:38 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:37:38 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:37:38 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:37:38 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:37:38 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:37:38 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:37:38 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:37:38 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:37:38 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:37:38 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:37:38 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:37:38 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:37:38 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:37:38 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:37:38 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:37:38 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:37:38 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:37:38 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:37:38 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:37:38 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:37:38 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:37:38 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:37:38 -0200
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2016-10-16 22:37:44 -0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7A84IV6j9i/MsFpB46BRLcsyiunzH3L0H/gjvITf3Mim8fP+71SniJBpOzKtk73Ezkug4zP2bLjy5Z0kPLcoSg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-16 22:37:44 -0200
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered layouts/_header.html.erb (2955.1ms)
+Completed 200 OK in 3007ms (Views: 3005.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2016-10-16 22:37:49 -0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YmJu485K5A+AqdhZrb6AFuVqptcfmbhsAUJp1DNMJloonKU8f721qNxwuSrjjWz/4BOM3d9wpiDsX9dMiyTS2A==", "session"=>{"email"=>"admin@pdvend.com.br", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "admin@pdvend.com.br"]]
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 84ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2016-10-16 22:37:49 -0200
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (3327.9ms)
+Completed 200 OK in 3378ms (Views: 3377.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mentions" for 127.0.0.1 at 2016-10-16 22:37:57 -0200
+Processing by MentionsController#index as HTML
+  [1m[35mMention Load (0.2ms)[0m  SELECT "mentions".* FROM "mentions"
+  Rendered mentions/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (39394.9ms)
+Completed 200 OK in 39447ms (Views: 39442.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mentions/new" for 127.0.0.1 at 2016-10-16 22:38:42 -0200
+Processing by MentionsController#new as HTML
+  [1m[35mDiscipline Load (0.2ms)[0m  SELECT "disciplines".* FROM "disciplines"
+  [1m[36mTeacher Load (0.2ms)[0m  [1mSELECT "teachers".* FROM "teachers"[0m
+  [1m[35mPeriod Load (0.1ms)[0m  SELECT "periods".* FROM "periods"
+  Rendered mentions/_form.html.erb (19.2ms)
+  Rendered mentions/new.html.erb within layouts/application (23.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (8620.8ms)
+Completed 200 OK in 8700ms (Views: 8687.0ms | ActiveRecord: 1.1ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('admin@pdvend.com.br') AND "users"."id" != 2) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "type_user" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["type_user", "admin"], ["updated_at", "2016-10-17 00:40:56.618169"], ["id", 2]]
+  [1m[35m (97.9ms)[0m  commit transaction
+
+
+Started GET "/mentions/new" for 127.0.0.1 at 2016-10-16 22:41:01 -0200
+Processing by MentionsController#new as HTML
+  [1m[35mDiscipline Load (0.2ms)[0m  SELECT "disciplines".* FROM "disciplines"
+  [1m[36mTeacher Load (0.2ms)[0m  [1mSELECT "teachers".* FROM "teachers"[0m
+  [1m[35mPeriod Load (0.2ms)[0m  SELECT "periods".* FROM "periods"
+  Rendered mentions/_form.html.erb (4.4ms)
+  Rendered mentions/new.html.erb within layouts/application (6.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (2671.2ms)
+Completed 200 OK in 2727ms (Views: 2725.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:41:04 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:41:04 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:41:04 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:41:04 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:41:04 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:41:04 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:41:04 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:41:04 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:41:04 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:41:04 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:41:04 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:41:04 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:41:04 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:41:04 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:41:04 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:41:04 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:41:04 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:41:04 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:41:04 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:41:04 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:41:04 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:41:04 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:41:04 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:41:04 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:41:04 -0200
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-16 22:47:59 -0200
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (16.6ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 72ms (Views: 70.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2016-10-16 22:48:05 -0200
+Processing by TeachersController#index as HTML
+  [1m[35mTeacher Load (0.2ms)[0m  SELECT "teachers".* FROM "teachers"
+  Rendered teachers/index.html.erb within layouts/application (6.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 63ms (Views: 60.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2016-10-16 22:48:08 -0200
+Processing by TeachersController#index as HTML
+  [1m[35mTeacher Load (0.2ms)[0m  SELECT "teachers".* FROM "teachers"
+  Rendered teachers/index.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 71ms (Views: 69.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/teachers/new" for 127.0.0.1 at 2016-10-16 22:48:08 -0200
+Processing by TeachersController#new as HTML
+  Rendered teachers/_form.html.erb (1.9ms)
+  Rendered teachers/new.html.erb within layouts/application (4.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 53ms (Views: 46.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2016-10-16 22:48:11 -0200
+Processing by TeachersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1YTWcTgdKWYYWAk7V1Pgbb1gD9Q8DGW1jk5W8hs/fCWfeh2uiep4wUSBaEgZYAyEuBkl3vzle/ljU+hqo1eIpw==", "teacher"=>{"name"=>"Fragelli"}, "commit"=>"Criar Professor"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "teachers" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Fragelli"], ["created_at", "2016-10-17 00:48:11.273438"], ["updated_at", "2016-10-17 00:48:11.273438"]]
+  [1m[36m (164.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/teachers/1
+Completed 302 Found in 170ms (ActiveRecord: 165.1ms)
+
+
+Started GET "/teachers/1" for 127.0.0.1 at 2016-10-16 22:48:11 -0200
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTeacher Load (0.3ms)[0m  SELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered teachers/show.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 55ms (Views: 52.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/teachers/1" for 127.0.0.1 at 2016-10-16 22:48:48 -0200
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTeacher Load (0.1ms)[0m  SELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered teachers/show.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 49ms (Views: 47.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:48:48 -0200
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:48:48 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:48:48 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:48:48 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:48:49 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:48:49 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:48:49 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:48:49 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:48:49 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:48:49 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:48:49 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:49 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:49 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:49 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:49 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:49 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:49 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:49 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:49 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:49 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:49 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:49 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:49 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:49 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:49 -0200
+
+
+Started GET "/mentions" for 127.0.0.1 at 2016-10-16 22:48:51 -0200
+Processing by MentionsController#index as HTML
+  [1m[35mMention Load (0.2ms)[0m  SELECT "mentions".* FROM "mentions"
+  Rendered mentions/index.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 54ms (Views: 52.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mentions" for 127.0.0.1 at 2016-10-16 22:48:55 -0200
+Processing by MentionsController#index as HTML
+  [1m[35mMention Load (0.2ms)[0m  SELECT "mentions".* FROM "mentions"
+  Rendered mentions/index.html.erb within layouts/application (16.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 65ms (Views: 63.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:48:56 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:48:56 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:48:56 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:48:56 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:48:56 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:48:56 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:48:56 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:48:56 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:48:56 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:48:56 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:48:56 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:56 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:56 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:56 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:56 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:56 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:56 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:56 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:56 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:56 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:56 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:56 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:56 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:56 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:48:56 -0200
+
+
+Started GET "/periods" for 127.0.0.1 at 2016-10-16 22:49:07 -0200
+Processing by PeriodsController#index as HTML
+  [1m[35mPeriod Load (0.2ms)[0m  SELECT "periods".* FROM "periods"
+  Rendered periods/index.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 49ms (Views: 47.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/periods/new" for 127.0.0.1 at 2016-10-16 22:49:09 -0200
+Processing by PeriodsController#new as HTML
+  Rendered periods/_form.html.erb (5.5ms)
+  Rendered periods/new.html.erb within layouts/application (6.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 52ms (Views: 51.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/periods" for 127.0.0.1 at 2016-10-16 22:49:27 -0200
+Processing by PeriodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"huL7SkG5FvFLuCnRf54rhqLJP7IRgDN0TnKs6N/82fLMHDCV8E5HVhdhSKIxrcdvp7AVuNFpLTijbxJwZ5QtcA==", "period"=>{"name"=>"2/2013", "start(3i)"=>"16", "start(2i)"=>"7", "start(1i)"=>"2013", "finish(3i)"=>"16", "finish(2i)"=>"12", "finish(1i)"=>"2013"}, "commit"=>"Criar Period"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "periods" ("name", "start", "finish", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "2/2013"], ["start", "2013-07-16"], ["finish", "2013-12-16"], ["created_at", "2016-10-17 00:49:27.559955"], ["updated_at", "2016-10-17 00:49:27.559955"]]
+  [1m[36m (152.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/periods/2
+Completed 302 Found in 158ms (ActiveRecord: 152.5ms)
+
+
+Started GET "/periods/2" for 127.0.0.1 at 2016-10-16 22:49:27 -0200
+Processing by PeriodsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPeriod Load (0.3ms)[0m  SELECT  "periods".* FROM "periods" WHERE "periods"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered periods/show.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 52ms (Views: 50.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/disciplines" for 127.0.0.1 at 2016-10-16 22:49:36 -0200
+Processing by DisciplinesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mDiscipline Load (0.1ms)[0m  [1mSELECT "disciplines".* FROM "disciplines"[0m
+  Rendered disciplines/index.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 52ms (Views: 50.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/disciplines/new" for 127.0.0.1 at 2016-10-16 22:49:37 -0200
+Processing by DisciplinesController#new as HTML
+  [1m[35mTeacher Load (0.2ms)[0m  SELECT "teachers".* FROM "teachers"
+  Rendered disciplines/_form.html.erb (65.0ms)
+  Rendered disciplines/new.html.erb within layouts/application (68.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 126ms (Views: 120.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/disciplines/new" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+Processing by DisciplinesController#new as HTML
+  [1m[35mTeacher Load (0.2ms)[0m  SELECT "teachers".* FROM "teachers"
+  [1m[36mPeriod Load (0.1ms)[0m  [1mSELECT "periods".* FROM "periods"[0m
+  Rendered disciplines/_form.html.erb (5.8ms)
+  Rendered disciplines/new.html.erb within layouts/application (7.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 56ms (Views: 55.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:52:52 -0200
+
+
+Started GET "/disciplines/new" for 127.0.0.1 at 2016-10-16 22:55:23 -0200
+Processing by DisciplinesController#new as HTML
+  Rendered disciplines/_form.html.erb (4.5ms)
+  Rendered disciplines/new.html.erb within layouts/application (6.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 55ms (Views: 53.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:55:23 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:55:23 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:55:23 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:55:23 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:55:23 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:55:23 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:55:23 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:55:23 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:55:23 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:55:23 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:55:23 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:23 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:23 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:23 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:23 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:23 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:23 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:23 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:23 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:23 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:23 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:23 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:23 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:24 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:24 -0200
+
+
+Started GET "/disciplines/new" for 127.0.0.1 at 2016-10-16 22:55:46 -0200
+Processing by DisciplinesController#new as HTML
+  Rendered disciplines/_form.html.erb (2.1ms)
+  Rendered disciplines/new.html.erb within layouts/application (3.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 50ms (Views: 48.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:55:47 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:55:47 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:55:47 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:55:47 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:55:47 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:55:47 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:55:47 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:55:47 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:55:47 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:55:47 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:55:47 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:47 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:47 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:47 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:47 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:47 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:47 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:47 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:47 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:47 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:47 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:47 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:47 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:47 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:55:47 -0200
+
+
+Started GET "/teachers" for 127.0.0.1 at 2016-10-16 22:55:51 -0200
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.3ms)[0m  [1mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (6.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 66ms (Views: 64.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2016-10-16 22:55:53 -0200
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.2ms)[0m  [1mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (5.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 50ms (Views: 48.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/disciplines" for 127.0.0.1 at 2016-10-16 22:55:55 -0200
+Processing by DisciplinesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mDiscipline Load (0.2ms)[0m  SELECT "disciplines".* FROM "disciplines"
+  Rendered disciplines/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 59ms (Views: 57.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/disciplines/new" for 127.0.0.1 at 2016-10-16 22:55:56 -0200
+Processing by DisciplinesController#new as HTML
+  Rendered disciplines/_form.html.erb (11.3ms)
+  Rendered disciplines/new.html.erb within layouts/application (13.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 57ms (Views: 56.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/disciplines/new" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+Processing by DisciplinesController#new as HTML
+  [1m[35mTeacher Load (0.2ms)[0m  SELECT "teachers".* FROM "teachers"
+  [1m[36mPeriod Load (0.2ms)[0m  [1mSELECT "periods".* FROM "periods"[0m
+  Rendered disciplines/_form.html.erb (5.3ms)
+  Rendered disciplines/new.html.erb within layouts/application (7.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 61ms (Views: 60.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:56:57 -0200
+
+
+Started GET "/periods" for 127.0.0.1 at 2016-10-16 22:57:04 -0200
+Processing by PeriodsController#index as HTML
+  [1m[36mPeriod Load (0.3ms)[0m  [1mSELECT "periods".* FROM "periods"[0m
+  Rendered periods/index.html.erb within layouts/application (1.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 50ms (Views: 48.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/periods/new" for 127.0.0.1 at 2016-10-16 22:57:05 -0200
+Processing by PeriodsController#new as HTML
+  Rendered periods/_form.html.erb (6.9ms)
+  Rendered periods/new.html.erb within layouts/application (8.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 61ms (Views: 59.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/periods/new" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+Processing by PeriodsController#new as HTML
+  Rendered periods/_form.html.erb (5.2ms)
+  Rendered periods/new.html.erb within layouts/application (5.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 51ms (Views: 50.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:47 -0200
+
+
+Started GET "/periods/new" for 127.0.0.1 at 2016-10-16 22:57:48 -0200
+Processing by PeriodsController#new as HTML
+  Rendered periods/_form.html.erb (4.8ms)
+  Rendered periods/new.html.erb within layouts/application (5.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 59ms (Views: 57.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:48 -0200
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:48 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:48 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:48 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:48 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:48 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:48 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:48 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:48 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:48 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:49 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:49 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:49 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:49 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:49 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:49 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:49 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:49 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:49 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:49 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:49 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:49 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:49 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:49 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:49 -0200
+
+
+Started GET "/periods/new" for 127.0.0.1 at 2016-10-16 22:57:49 -0200
+Processing by PeriodsController#new as HTML
+  Rendered periods/_form.html.erb (10.4ms)
+  Rendered periods/new.html.erb within layouts/application (11.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 77ms (Views: 76.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:50 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:50 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:50 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:50 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:50 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:50 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:50 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:50 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:50 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:50 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:57:50 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:50 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:50 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:50 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:50 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:50 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:50 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:50 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:50 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:50 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:50 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:50 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:50 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:50 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:57:50 -0200
+
+
+Started GET "/periods/new" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+Processing by PeriodsController#new as HTML
+  Rendered periods/_form.html.erb (4.2ms)
+  Rendered periods/new.html.erb within layouts/application (4.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 51ms (Views: 50.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:03 -0200
+
+
+Started GET "/periods/new" for 127.0.0.1 at 2016-10-16 22:58:04 -0200
+Processing by PeriodsController#new as HTML
+  Rendered periods/_form.html.erb (5.1ms)
+  Rendered periods/new.html.erb within layouts/application (5.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 60ms (Views: 58.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:04 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:04 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:04 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:04 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:04 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:04 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:04 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:04 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:04 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:04 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:04 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:04 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:04 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:04 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:05 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:05 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:05 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:05 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:05 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:05 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:05 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:05 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:05 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:05 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:05 -0200
+
+
+Started GET "/periods/new" for 127.0.0.1 at 2016-10-16 22:58:05 -0200
+Processing by PeriodsController#new as HTML
+  Rendered periods/_form.html.erb (10.9ms)
+  Rendered periods/new.html.erb within layouts/application (12.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 92ms (Views: 89.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:06 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:06 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:06 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:06 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:06 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:06 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:06 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:06 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:06 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:06 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:06 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:06 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:06 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:06 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:06 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:06 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:06 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:06 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:06 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:06 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:06 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:06 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:06 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:06 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:06 -0200
+
+
+Started GET "/periods/new" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+Processing by PeriodsController#new as HTML
+  Rendered periods/_form.html.erb (10.6ms)
+  Rendered periods/new.html.erb within layouts/application (11.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 82ms (Views: 80.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:13 -0200
+
+
+Started GET "/periods/new" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+Processing by PeriodsController#new as HTML
+  Rendered periods/_form.html.erb (8.5ms)
+  Rendered periods/new.html.erb within layouts/application (9.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 58ms (Views: 57.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:58:14 -0200
+
+
+Started POST "/periods" for 127.0.0.1 at 2016-10-16 22:58:32 -0200
+Processing by PeriodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"egn1ZgKYua3pLGH4yVOv2PBlS4eJcWCYPmLiiqAVVmww9z65s2/oCrX1AIuHYEMx9RxhjUmYftTTf1wSGH2i7g==", "period"=>{"name"=>"2/2013", "start(3i)"=>"16", "start(2i)"=>"10", "start(1i)"=>"2016", "finish(3i)"=>"16", "finish(2i)"=>"10", "finish(1i)"=>"2016"}, "commit"=>"Criar Period"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "periods" ("name", "start", "finish", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "2/2013"], ["start", "2016-10-16"], ["finish", "2016-10-16"], ["created_at", "2016-10-17 00:58:32.616183"], ["updated_at", "2016-10-17 00:58:32.616183"]]
+  [1m[35m (156.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/periods/3
+Completed 302 Found in 162ms (ActiveRecord: 156.6ms)
+
+
+Started GET "/periods/3" for 127.0.0.1 at 2016-10-16 22:58:32 -0200
+Processing by PeriodsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPeriod Load (0.2ms)[0m  [1mSELECT  "periods".* FROM "periods" WHERE "periods"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered periods/show.html.erb within layouts/application (0.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 49ms (Views: 47.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/periods" for 127.0.0.1 at 2016-10-16 22:58:34 -0200
+Processing by PeriodsController#index as HTML
+  [1m[36mPeriod Load (0.4ms)[0m  [1mSELECT "periods".* FROM "periods"[0m
+  Rendered periods/index.html.erb within layouts/application (2.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 54ms (Views: 52.8ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/periods/3" for 127.0.0.1 at 2016-10-16 22:58:36 -0200
+Processing by PeriodsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6jlN3Jy73Ooz1vdhlC0+loAQaTb8Kn7hZ+IMkLtXQtCgx4YDLUyNTW8PlhLaHtJ/hWlDPDzDYK2K/7IIAz+2Ug==", "id"=>"3"}
+  [1m[36mPeriod Load (0.1ms)[0m  [1mSELECT  "periods".* FROM "periods" WHERE "periods"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "periods" WHERE "periods"."id" = ?[0m  [["id", 3]]
+  [1m[35m (99.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/periods
+Completed 302 Found in 102ms (ActiveRecord: 99.9ms)
+
+
+Started GET "/periods" for 127.0.0.1 at 2016-10-16 22:58:37 -0200
+Processing by PeriodsController#index as HTML
+  [1m[36mPeriod Load (0.4ms)[0m  [1mSELECT "periods".* FROM "periods"[0m
+  Rendered periods/index.html.erb within layouts/application (2.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 55ms (Views: 53.7ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/periods/2" for 127.0.0.1 at 2016-10-16 22:58:38 -0200
+Processing by PeriodsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"g7gXZT/72TNsEBk86Femt6vnewrCCCSG5DrD/Zv5V3PJRty6jgyIlDDJeE+mZEperp5RAALhOsoJJ31lI5Gj8Q==", "id"=>"2"}
+  [1m[36mPeriod Load (0.1ms)[0m  [1mSELECT  "periods".* FROM "periods" WHERE "periods"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "periods" WHERE "periods"."id" = ?[0m  [["id", 2]]
+  [1m[35m (106.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/periods
+Completed 302 Found in 109ms (ActiveRecord: 106.8ms)
+
+
+Started GET "/periods" for 127.0.0.1 at 2016-10-16 22:58:38 -0200
+Processing by PeriodsController#index as HTML
+  [1m[36mPeriod Load (0.2ms)[0m  [1mSELECT "periods".* FROM "periods"[0m
+  Rendered periods/index.html.erb within layouts/application (0.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 56ms (Views: 54.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/periods" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+Processing by PeriodsController#index as HTML
+  [1m[36mPeriod Load (0.3ms)[0m  [1mSELECT "periods".* FROM "periods"[0m
+  Rendered periods/index.html.erb within layouts/application (1.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 52ms (Views: 51.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 22:59:46 -0200
+
+
+Started GET "/periods/new" for 127.0.0.1 at 2016-10-16 22:59:48 -0200
+Processing by PeriodsController#new as HTML
+  Rendered periods/_form.html.erb (10.9ms)
+  Rendered periods/new.html.erb within layouts/application (11.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 57ms (Views: 55.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/periods/new" for 127.0.0.1 at 2016-10-16 23:00:53 -0200
+Processing by PeriodsController#new as HTML
+  Rendered periods/_form.html.erb (2.7ms)
+  Rendered periods/new.html.erb within layouts/application (4.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 51ms (Views: 50.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 23:00:53 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 23:00:53 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 23:00:53 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 23:00:53 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 23:00:53 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 23:00:53 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 23:00:53 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 23:00:53 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 23:00:53 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 23:00:53 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 23:00:53 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 23:00:53 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 23:00:53 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 23:00:53 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 23:00:53 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 23:00:53 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 23:00:53 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 23:00:53 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 23:00:53 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 23:00:53 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 23:00:53 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 23:00:53 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 23:00:53 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 23:00:54 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 23:00:54 -0200
+
+
+Started GET "/periods/new" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+Processing by PeriodsController#new as HTML
+  Rendered periods/_form.html.erb (9.0ms)
+  Rendered periods/new.html.erb within layouts/application (10.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 58ms (Views: 57.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+
+
+Started GET "/assets/mentions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+
+
+Started GET "/assets/new_professor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+
+
+Started GET "/assets/periods.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+
+
+Started GET "/assets/disciplines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+
+
+Started GET "/assets/scaffolds.self-e8a6e056cd788755de24eb4bdda364ac71a7865a1807a58ddd935e4ca3d1479b.css?body=1" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+
+
+Started GET "/assets/teachers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+
+
+Started GET "/assets/sessions.self-c83d8c2aadc7d6b7fb175a6fb9d2c4e40f69fdc3d42ae204cea932c5ed5bb211.css?body=1" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+
+
+Started GET "/assets/application.self-5c6c0cb04245f8c83716546af7e16d83cd533b9444564e43eb5268ba144ddb7f.css?body=1" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+
+
+Started GET "/assets/disciplines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+
+
+Started GET "/assets/periods.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+
+
+Started GET "/assets/mentions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+
+
+Started GET "/assets/teachers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+
+
+Started GET "/assets/bootstrap-modal.self-943877ffd5f7ace0f6644670e050038abe615819ea74fd8c83888ae7813e4366.js?body=1" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+
+
+Started GET "/assets/bootstrap-modalmanager.self-06d1fe0eff7ff7dc970d4a2105575d4548f0d207a7ac9d45ac67d4672446fb05.js?body=1" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2016-10-16 23:01:19 -0200
+
+
+Started GET "/periods/1" for 127.0.0.1 at 2016-10-16 23:01:23 -0200
+Processing by PeriodsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPeriod Load (0.1ms)[0m  SELECT  "periods".* FROM "periods" WHERE "periods"."id" = ? LIMIT 1  [["id", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Period with 'id'=1):
+  app/controllers/periods_controller.rb:67:in `set_period'
+
+
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.3ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.9ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/ruan/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (34.2ms)
