@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :graphics
   resources :comments
   get 'home/index'
   get "disciplines/new_professor" => 'disciplines#new_professor', :as => :new_professor
