@@ -52,7 +52,7 @@
        ]);
 
        var options = {
-         title: 'My Daily Activities',
+         title: 'Gráfico de pizza',
          pieHole: 0.4,
        };
 
@@ -73,10 +73,12 @@
  function drawChart() {
    var data = google.visualization.arrayToDataTable([
      ["Element", "Density", { role: "style" } ],
-     ["Copper", 8.94, "#b87333"],
-     ["Silver", 10.49, "silver"],
-     ["Gold", 19.30, "gold"],
-     ["Platinum", 21.45, "color: #e5e4e2"]
+     ["SR", <%= sr %>, "#3366cc"],
+     ["II", <%= ii %>, "#dc3912"],
+     ["MI", <%= mi %>, "#ff9900"],
+     ["MM", <%= mm %>, "#109618"],
+     ["MS", <%= ms %>, "#990099"],
+     ["SS", <%= ss %>, "#0099c6"]
    ]);
 
    var view = new google.visualization.DataView(data);
@@ -88,7 +90,7 @@
                     2]);
 
    var options = {
-     title: "Density of Precious Metals, in g/cm^3",
+     title: "Gráficos de barras",
      width: 600,
      height: 400,
      bar: {groupWidth: "95%"},
