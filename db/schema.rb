@@ -43,10 +43,20 @@ ActiveRecord::Schema.define(version: 20161031104606) do
     t.integer  "teacher_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "period_id"
   end
 
   add_index "mentions", ["discipline_id"], name: "index_mentions_on_discipline_id"
+  add_index "mentions", ["period_id"], name: "index_mentions_on_period_id"
   add_index "mentions", ["teacher_id"], name: "index_mentions_on_teacher_id"
+
+  create_table "periods", force: :cascade do |t|
+    t.string   "name"
+    t.date     "start"
+    t.date     "finish"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "teachers", force: :cascade do |t|
     t.string   "name"
