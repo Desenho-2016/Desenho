@@ -1,0 +1,15 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.col-lg-6{
+  font-family: monospace;
+  font-size: 32px;
+}
+
+body > div.navbar.navbar-inverse{
+  margin-bottom: 90px;
+}
+
+body > div.navbar.navbar-inverse > ul.nav.navbar-nav.navbar-right > li > a {
+  margin-right: 60px;
+}

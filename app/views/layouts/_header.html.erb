@@ -10,8 +10,11 @@
           <li class="link"><%= link_to "Disciplinas", disciplines_path, class: "navbar-brand"  %></li>
           <li class="link"><%= link_to "Menções", mentions_path, class: "navbar-brand"  %></li>
             <li class="link"><%= link_to "Log out", sign_out_path, method: "delete", class: "navbar-brand"  %></li>
-        <% else %>
-            <li class="link"><%= link_to "Log in", root_path, class: "navbar-brand"  %></li>
         <% end %>
-+     </ul>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <% if !logged_in? %>
+        <li class="link"><%= link_to "Log in", sign_in_path, class: "navbar-brand"%></li>
+      <% end %>  
+    </ul>
 </div>

@@ -11,11 +11,10 @@ Rails.application.routes.draw do
   resources :teachers
   post '/teachers/new' => 'teachers#create', :as => :create_teacher
   post 'disciplines/create_comment_discipline' => 'disciplines#create_comment_discipline'
-  root 'sessions#new'
+  root 'sessions#index'
   resources :users
 
   resource :confirmation, :only => [:show]
-
   get    'sign_in'   => 'sessions#new'
   post   'sign_in'   => 'sessions#create'
   delete 'sign_out'  => 'sessions#destroy'
