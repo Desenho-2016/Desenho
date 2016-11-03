@@ -1,39 +1,19 @@
-<h1>Gráficos</h1>
+<h1  align="left" >Gráficos</h1>
+
+<div class="form-group">
+  <div class="col-lg-5">
+    <% discipline = Discipline.all %>
+    <select class="form-control" id="filter-discipline" >
+      <% discipline.each do |m| %>
+        <option value="<%= m.name %>"> <%= m.name %> </option>
+      <% end %>
+    </select>
+  </div>
+</div>
+<button class="form-group" onclick="getValueSelected()">Ok</button>
+<% GraphicsHelper.build_mention %>
 <!-- <h4>more informations https://google-developers.appspot.com/chart/interactive/docs/gallery/piechart#fullhtml </h4> -->
 
-<% sr = 0 %>
-<% ii = 0 %>
-<% mi = 0 %>
-<% mm = 0 %>
-<% ms = 0 %>
-<% ss = 0 %>
-
-<% mention = Mention.all %>
-
-<% mention.each do |m| %>
-  <% if m.value == 'SR' %>
-    <% sr = sr + 1 %>
-  <% end %>
-  <% if m.value == 'II' %>
-    <% ii = ii + 1 %>
-  <% end %>
-  <% if m.value == 'MI' %>
-    <% mi = mi + 1 %>
-  <% end %>
-  <% if m.value == 'MM' %>
-    <% mm = mm + 1 %>
-  <% end %>
-  <% if m.value == 'MS' %>
-    <% ms = ms + 1 %>
-  <% end %>
-  <% if m.value == 'SS' %>
-    <% ss = ss + 1 %>
-  <% end %>
-<% end %>
-
-
-
-<% oiii = 3 %>
 <html>
  <head>
    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -42,15 +22,19 @@
      google.charts.setOnLoadCallback(drawChartPieChart);
      google.charts.setOnLoadCallback(drawChartColumnChart);
 
+     function getValueSelected(){
+      alert(document.getElementById("filter-discipline").value);
+     }
+
      function drawChartPieChart() {
        var data = google.visualization.arrayToDataTable([
          ['Task', 'Hours per Day'],
-         ['SR',     <%= sr %>],
-         ['II',     <%= ii %>],
-         ['MI',      <%= mi %>],
-         ['MM',  <%= mm %>],
-         ['MS', <%= ms %>],
-         ['SS',    <%= ss %>]
+         ['SR',     <%= GraphicsHelper.sr %>],
+         ['II',     <%= GraphicsHelper.ii %>],
+         ['MI',      <%= GraphicsHelper.mi %>],
+         ['MM',  <%= GraphicsHelper.mm %>],
+         ['MS', <%= GraphicsHelper.ms %>],
+         ['SS',    <%= GraphicsHelper.ss %>]
        ]);
 
        var options = {
@@ -62,18 +46,15 @@
        chart.draw(data, options);
      }
 
-     /////////////////////////////////////////////////////////////////
-
-
      function drawChartColumnChart() {
        var data = google.visualization.arrayToDataTable([
          ["Element", "Density", { role: "style" } ],
-         ["SR", <%= sr %>, "#3366cc"],
-         ["II", <%= ii %>, "#dc3912"],
-         ["MI", <%= mi %>, "#ff9900"],
-         ["MM", <%= mm %>, "#109618"],
-         ["MS", <%= ms %>, "#990099"],
-         ["SS", <%= ss %>, "#0099c6"]
+         ["SR", <%= GraphicsHelper.sr %>, "#3366cc"],
+         ["II", <%= GraphicsHelper.ii %>, "#dc3912"],
+         ["MI", <%= GraphicsHelper.mi %>, "#ff9900"],
+         ["MM", <%= GraphicsHelper.mm %>, "#109618"],
+         ["MS", <%= GraphicsHelper.ms %>, "#990099"],
+         ["SS", <%= GraphicsHelper.ss %>, "#0099c6"]
        ]);
 
        var view = new google.visualization.DataView(data);
