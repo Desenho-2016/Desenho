@@ -66,3 +66,5 @@ gem "twitter-bootstrap-rails"
 gem 'cancancan'
 
 gem 'rails-i18n'
+
+gem "paperclip", "~> 5.0.0"
