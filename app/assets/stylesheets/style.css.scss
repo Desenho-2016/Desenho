@@ -8,8 +8,20 @@
 
 body > div.navbar.navbar-inverse{
   margin-bottom: 90px;
+  padding-bottom: 12px;
 }
 
 body > div.navbar.navbar-inverse > ul.nav.navbar-nav.navbar-right > li > a {
   margin-right: 60px;
+}
+
+.welcome-user{
+  color: #9d9d9d;
+  padding: 15px;
+  font-size: 18px;
+}
+
+.user-profile-image{
+  border-radius: 100%;
+  margin-right: 40px;
 }
