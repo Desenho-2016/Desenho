@@ -6,22 +6,41 @@
   font-size: 32px;
 }
 
-body > div.navbar.navbar-inverse{
-  margin-bottom: 90px;
-  padding-bottom: 12px;
+body{
+  width: 100%;
 }
 
-body > div.navbar.navbar-inverse > ul.nav.navbar-nav.navbar-right > li > a {
+body > div.navbar.navbar-inverse{
+  margin-bottom: 90px;
+  border-radius: 0px;
+  height: 60px;
+}
+
+body > div.navbar.navbar-inverse > ul > li > a{
+  padding-top: 17px;
+}
+
+body > div.navbar.navbar-inverse > ul.nav.navbar-nav.navbar-right{
+  width: 216px;
+  margin: 4px;
+}
+
+body > div.navbar.navbar-inverse > ul.nav.navbar-nav.navbar-right > li > a{
+  margin-left: 110px;
+}
+nav navbar-nav > li > a {
   margin-right: 60px;
 }
 
 .welcome-user{
   color: #9d9d9d;
+  padding-top: 17px !important;
   padding: 15px;
   font-size: 18px;
 }
-
 .user-profile-image{
+  max-width: 50px;
+  height: 50px;
   border-radius: 100%;
-  margin-right: 40px;
+  margin-right: 30px;
 }

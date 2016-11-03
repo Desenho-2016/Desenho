@@ -17,7 +17,7 @@
         <li class="link"><%= link_to "Log in", sign_in_path, class: "navbar-brand"%></li>
       <% else %>
         <li class="welcome-user"><%="Olá, %s" % current_user.name %></li>
-        <li class="user-image"><%=image_tag current_user.avatar.url(:thumb),  class:'user-profile-image'%></li>
+        <li class="user-profile-image"><%=image_tag current_user.avatar.url(:thumb),  class:'user-profile-image'%></li>
       <% end %>
     </ul>
 </div>
