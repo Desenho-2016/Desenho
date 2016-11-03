@@ -5062,3 +5062,42 @@ Processing by GraphicsController#new as HTML
   [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
   Rendered layouts/_header.html.erb (3.4ms)
 Completed 200 OK in 84ms (Views: 78.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-03 12:27:43 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (1237.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (2.5ms)
+Completed 200 OK in 2539ms (Views: 2499.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/graphics/new" for 127.0.0.1 at 2016-11-03 12:27:46 -0200
+Processing by GraphicsController#new as HTML
+  [1m[35mDiscipline Load (0.2ms)[0m  SELECT "disciplines".* FROM "disciplines"
+  [1m[36mMention Load (0.2ms)[0m  [1mSELECT "mentions".* FROM "mentions"[0m
+  Rendered graphics/new.html.erb within layouts/application (106.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 210ms (Views: 201.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-03 20:04:29 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (1946.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (2.2ms)
+Completed 200 OK in 3726ms (Views: 3676.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-03 20:04:32 -0200
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 67ms (Views: 65.6ms | ActiveRecord: 0.2ms)

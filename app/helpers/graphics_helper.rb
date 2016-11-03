@@ -11,10 +11,10 @@ module GraphicsHelper
     mention = Mention.all
     mention.each do |m|
        if m.value == 'SR'
-         @@sr = @@sr + 1
+         self.sr = (self.sr + 1)
        end
        if m.value == 'II'
-         @@ii = @@ii + 1
+         self.ii = (self.ii + 1)
        end
        if m.value == 'MI'
          @@mi = @@mi + 1
