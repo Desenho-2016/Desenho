@@ -1,46 +1,72 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.col-lg-6{
+.col-lg-6 {
   font-family: monospace;
   font-size: 32px;
 }
 
-body{
+body {
   width: 100%;
 }
 
-body > div.navbar.navbar-inverse{
+body > div.navbar.navbar-inverse {
   margin-bottom: 90px;
   border-radius: 0px;
   height: 60px;
 }
 
-body > div.navbar.navbar-inverse > ul > li > a{
+body > div.navbar.navbar-inverse > ul > li > a {
   padding-top: 17px;
 }
 
-body > div.navbar.navbar-inverse > ul.nav.navbar-nav.navbar-right{
+body > div.navbar.navbar-inverse > ul.nav.navbar-nav.navbar-right {
   width: 216px;
   margin: 4px;
 }
 
-body > div.navbar.navbar-inverse > ul.nav.navbar-nav.navbar-right > li > a{
+body > div.navbar.navbar-inverse > ul.nav.navbar-nav.navbar-right > li > a {
   margin-left: 110px;
 }
 nav navbar-nav > li > a {
   margin-right: 60px;
 }
 
-.welcome-user{
+.welcome-user {
   color: #9d9d9d;
   padding-top: 17px !important;
   padding: 15px;
   font-size: 18px;
 }
-.user-profile-image{
+.user-profile-image {
   max-width: 50px;
   height: 50px;
   border-radius: 100%;
   margin-right: 30px;
+}
+
+body .page-header {
+  text-align: center;
+}
+
+body > dl {
+  font-size: 17px;
+  padding-left: 550px;
+  margin-top: -90px;
+}
+
+.user-image {
+  max-width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  margin-left: 242px;
+}
+
+body > div.buttons-profile{
+  margin-top: 70px;
+  margin-left: 655px;
+}
+
+body > div.buttons-profile > a.btn.btn-primary > span, body > div.buttons-profile > a.btn.btn-danger > span {
+  color: #fff !important;
 }
