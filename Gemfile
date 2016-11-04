@@ -39,6 +39,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'interface', '~> 1.0', '>= 1.0.4'
+
 gem 'coveralls', require: false
 
 group :test do
