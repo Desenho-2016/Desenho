@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   post 'disciplines/create_comment_discipline' => 'disciplines#create_comment_discipline'
   root 'sessions#index'
   resources :users
-
   resource :confirmation, :only => [:show]
+  get    'graphics'   => 'graphics#new'
   get    'sign_in'   => 'sessions#new'
   post   'sign_in'   => 'sessions#create'
   delete 'sign_out'  => 'sessions#destroy'
