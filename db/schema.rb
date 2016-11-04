@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161104001315) do
+ActiveRecord::Schema.define(version: 20161104020435) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(version: 20161104001315) do
     t.string   "body"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "common_averages", force: :cascade do |t|
+    t.float    "scorep1"
+    t.float    "scorep2"
+    t.float    "scorep3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "disciplines", force: :cascade do |t|
