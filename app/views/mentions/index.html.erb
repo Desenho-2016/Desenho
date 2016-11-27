@@ -9,7 +9,6 @@
       <th><%= "Disciplina" %></th>
       <th><%= "Professor" %></th>
       <th><%= "Semestre" %></th>
-      <th><%=t '.actions', :default => t("Ações") %></th>
     </tr>
   </thead>
   <tbody>
@@ -19,7 +18,6 @@
         <td><%= mention.discipline.name %></td>
         <td><%= mention.discipline.teacher.name %></td>
         <td><%= mention.discipline.period.name %></td>
-        <td><%=l mention.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("Editar")),
                       edit_mention_path(mention), :class => 'btn btn-default btn-xs' %>
