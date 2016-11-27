@@ -25,6 +25,7 @@ class DisciplinesController < ApplicationController
   # POST /disciplines
   # POST /disciplines.json
   def create
+    debugger
     @discipline = Discipline.new(discipline_params)
 
     respond_to do |format|
@@ -93,6 +94,6 @@ class DisciplinesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def discipline_params
-      params.require(:discipline).permit(:name, :amount_credits)
+      params.require(:discipline).permit(:name, :amount_credits, :teacher_id, :period_id)
     end
 end
