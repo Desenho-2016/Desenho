@@ -3,7 +3,7 @@
   <h2>Meu perfil</h2>
 </div>
 <span class="user-image"><%= image_tag @user.avatar.url(:thumb), class:'user-image' %></span>
-<dl class="dl-horizontal">
+<dl class="dl-horizontal-profile">
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @user.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
