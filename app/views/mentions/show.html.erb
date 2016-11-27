@@ -13,13 +13,14 @@
   <dt><strong><%= "Semestre" %>:</strong></dt>
   <dd><%= @mention.semester %></dd>
 </dl>
-
+<div class="buttons">
 <%= link_to t('.back', :default => t("Voltar")),
               mentions_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("Editar")),
-              edit_mention_path(@mention), :class => 'btn btn-default' %>
+              edit_mention_path(@mention), :class => 'btn btn-primary' %>
 <%= link_to t('.destroy', :default => t("Deletar")),
               mention_path(@mention),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Confirmar deleção de menção?')) },
               :class => 'btn btn-danger' %>
+</div>

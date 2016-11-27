@@ -62,11 +62,16 @@ body > dl {
   margin-left: 242px;
 }
 
-body > div.buttons-profile{
+body > div.buttons{
   margin-top: 70px;
   margin-left: 655px;
 }
 
-body > div.buttons-profile > a.btn.btn-primary > span, body > div.buttons-profile > a.btn.btn-danger > span {
+body > div.buttons {
+  margin-top: 70px;
+  margin-left: 655px;
+}
+
+body > div.buttons > a.btn.btn-primary, body > div.buttons > a.btn.btn-danger {
   color: #fff !important;
 }
