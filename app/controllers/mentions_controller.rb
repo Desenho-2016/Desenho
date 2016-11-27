@@ -24,6 +24,7 @@ class MentionsController < ApplicationController
   # POST /mentions
   # POST /mentions.json
   def create
+    debugger
     @mention = Mention.new(mention_params)
 
     respond_to do |format|
@@ -69,6 +70,6 @@ class MentionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mention_params
-      params.require(:mention).permit(:value, :discipline_id, :teacher_id, :semester)
+      params.require(:mention).permit(:value, :discipline_id, :teacher_id, :period_id)
     end
 end

@@ -16,9 +16,9 @@
     <% @mentions.each do |mention| %>
       <tr>
         <td><%= link_to mention.value, mention_path(mention)%></td>
-        <td><%= mention.discipline_id %></td>
-        <td><%= mention.teacher_id %></td>
-        <td><%= mention.semester %></td>
+        <td><%= mention.discipline.name %></td>
+        <td><%= mention.discipline.teacher.name %></td>
+        <td><%= mention.discipline.period.name %></td>
         <td><%=l mention.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("Editar")),
