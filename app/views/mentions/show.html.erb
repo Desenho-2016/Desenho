@@ -7,11 +7,11 @@
   <dt><strong><%= "Valor" %>:</strong></dt>
   <dd><%= @mention.value %></dd>
   <dt><strong><%= "Disciplina" %>:</strong></dt>
-  <dd><%= @mention.discipline_id %></dd>
+  <dd><%= @mention.discipline.name %></dd>
   <dt><strong><%= "Professor" %>:</strong></dt>
-  <dd><%= @mention.teacher_id %></dd>
+  <dd><%= Teacher.find(@mention.teacher_id).name%></dd>
   <dt><strong><%= "Semestre" %>:</strong></dt>
-  <dd><%= @mention.semester %></dd>
+  <dd><%= Period.find(@mention.period_id).name %></dd>
 </dl>
 <div class="buttons">
 <%= link_to t('.back', :default => t("Voltar")),
