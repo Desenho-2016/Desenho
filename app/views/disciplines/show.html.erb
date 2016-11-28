@@ -24,7 +24,10 @@
   <% end %>
 <% end %>
 <br/><br/>
-  <%= link_to 'Novo comentario', new_comment_discipline_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-comment', :class => 'btn btn-info'} %>
+  <%= link_to 'Novo comentario', new_comment_discipline_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-comment', :class => 'btn btn-info', :discipline_id => @discipline.id} %>
 </div>
-
+<% comments = Comment.where("discipline_id = " + @discipline.id.to_s)%>
+<% comments.each do |comment| %>
+    <%= comment.body %>
+<% end %>
 <div id="modal-comment" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true"></div>

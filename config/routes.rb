@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :teachers
   post '/teachers/new' => 'teachers#create', :as => :create_teacher
   post 'disciplines/create_comment_discipline' => 'disciplines#create_comment_discipline'
+  post 'discipline/' => 'disciplines#create_comment_discipline'
   root 'sessions#index'
   resources :users
   resource :confirmation, :only => [:show]

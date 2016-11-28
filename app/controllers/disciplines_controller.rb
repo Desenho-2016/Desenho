@@ -81,7 +81,13 @@ class DisciplinesController < ApplicationController
   end
 
   def create_comment_discipline
-    @teacher = Teacher.new(params[:id_user], params[:id_discipline])
+    @discipline_id = :discipline_id
+    @comment = Comment.create(comment_params.merge(:user_id => User.last.id, :discipline_id => @discipline_id))
+    @comment.user_id = :user_id
+    respond_to do |format|
+      format.html { redirect_to comments_url, notice: 'Comentário postado' }
+      format.json { head :no_content }
+    end
 
   end
 
@@ -94,5 +100,9 @@ class DisciplinesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def discipline_params
       params.require(:discipline).permit(:name, :amount_credits, :teacher_id, :period_id)
+    end
+
+    def comment_params
+      params.require(:comment).permit(:user_id, :discipline_id, :body)
     end
 end

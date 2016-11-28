@@ -22,8 +22,8 @@
         <% else %>
         <td> Professor não cadastrado </td>
             <% end %>
-            <% if mention.discipline.period != nil %>
-        <td><%= mention.discipline.period.name %></td>
+            <% if mention.period_id != nil %>
+        <td><%= Period.find(mention.period_id).name %></td>
             <% else %>
             <td> Período não cadastrado </td>
             <% end %>

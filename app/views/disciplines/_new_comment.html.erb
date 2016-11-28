@@ -13,7 +13,7 @@
       </div>
       <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
-        <%= button_to "Comentar", {:controller=> "disciplines", :action => "create_comment_discipline", :user_id=> session[:user_id] } , :method => :post, :class => "btn btn-primary" %>
+        <%= button_to "Comentar", {:controller=> "disciplines", :action => "create_comment_discipline", :user_id=> session[:user_id], :discipline_id => @discipline.id} ,  :method => :post, :class => "btn btn-primary" %>
       </div>
     </div>
   </div>
