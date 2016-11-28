@@ -81,8 +81,7 @@ class DisciplinesController < ApplicationController
   end
 
   def create_comment_discipline
-    @discipline_id = :discipline_id
-    @comment = Comment.create(comment_params.merge(:user_id => User.last.id, :discipline_id => @discipline_id))
+    @comment = Comment.create(comment_params.merge(:user_id => User.last.id, :discipline_id => :discipline_id))
     @comment.user_id = :user_id
     respond_to do |format|
       format.html { redirect_to comments_url, notice: 'Comentário postado' }
