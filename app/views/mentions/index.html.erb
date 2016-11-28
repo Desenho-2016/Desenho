@@ -15,9 +15,18 @@
     <% @mentions.each do |mention| %>
       <tr>
         <td><%= link_to mention.value, mention_path(mention)%></td>
+
         <td><%= mention.discipline.name %></td>
+        <% if mention.discipline.teacher != nil %>
         <td><%= mention.discipline.teacher.name %></td>
+        <% else %>
+        <td> Professor não cadastrado </td>
+            <% end %>
+            <% if mention.discipline.period != nil %>
         <td><%= mention.discipline.period.name %></td>
+            <% else %>
+            <td> Período não cadastrado </td>
+            <% end %>
         <td>
           <%= link_to t('.edit', :default => t("Editar")),
                       edit_mention_path(mention), :class => 'btn btn-default btn-xs' %>
