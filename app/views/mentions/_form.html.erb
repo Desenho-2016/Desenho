@@ -19,7 +19,7 @@
     <select name="post[discipline]" class="form-group control-label col-lg-3">
       <% Discipline.all.each do |discipline| %>
           <option class="form-group" value="<%= discipline.id %>">
-            <%= discipline.name %> | <%= discipline.teacher.name %> | <%= discipline.period.name %>
+            <%= discipline.name %> | <%= discipline.teacher %> | <%= discipline.period %>
           </option>
       <% end %>
     </select>
