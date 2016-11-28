@@ -17,8 +17,8 @@
         <td><%= link_to mention.value, mention_path(mention)%></td>
 
         <td><%= mention.discipline.name %></td>
-        <% if mention.discipline.teacher != nil %>
-        <td><%= mention.discipline.teacher.name %></td>
+        <% if mention.teacher_id != nil %>
+        <td><%= Teacher.find(mention.teacher_id).name%></td>
         <% else %>
         <td> Professor não cadastrado </td>
             <% end %>
