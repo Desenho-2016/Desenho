@@ -11,10 +11,10 @@ module GraphicsHelper
     mention = Mention.all
     mention.each do |m|
        if m.value == 'SR'
-         self.sr = (self.sr + 1)
+         @@sr = @@sr + 1
        end
        if m.value == 'II'
-         self.ii = (self.ii + 1)
+         @@ii = @@ii + 1
        end
        if m.value == 'MI'
          @@mi = @@mi + 1
@@ -31,49 +31,22 @@ module GraphicsHelper
      end
   end
 
-  def self.sr=(value)
-     @@sr = value
-  end
-
   def self.sr
     @@sr
   end
-
-  def self.ii=(value)
-    @@ii = value
-  end
-
   def self.ii
     @@ii
-  end
-
-
-  def self.mi=(value)
-    @@mi = value
   end
 
   def self.mi
     @@mi
   end
-
-  def self.mm=(value)
-     @@mm = value
-  end
-
   def self.mm
     @@mm
   end
 
-  def self.ms=(value)
-     @@ms = value
-  end
-
   def self.ms
     @@ms
-  end
-
-  def self.ss=(value)
-     @@ss = value
   end
 
   def self.ss
