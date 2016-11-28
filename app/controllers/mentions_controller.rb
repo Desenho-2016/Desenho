@@ -24,7 +24,6 @@ class MentionsController < ApplicationController
   # POST /mentions
   # POST /mentions.json
   def create
-    debugger
     @mention = Mention.new(mention_params)
 
     respond_to do |format|
