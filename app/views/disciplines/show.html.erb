@@ -1,6 +1,6 @@
 <%- model_class = Discipline -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <h2><%=t '.title', :default => model_class.model_name.human.titleize %></h2>
 </div>
 
 <dl class="dl-horizontal">
@@ -9,12 +9,12 @@
   <dt><strong><%= model_class.human_attribute_name(:amount_credits) %>:</strong></dt>
   <dd><%= @discipline.amount_credits %></dd>
 </dl>
-
+<div class="buttons">
 <%= link_to t('.back', :default => t("helpers.links.back")),
               disciplines_path, :class => 'btn btn-default'  %>
 <% if current_user.type_user == 'admin'%>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                edit_discipline_path(@discipline), :class => 'btn btn-default' %>
+                edit_discipline_path(@discipline), :class => 'btn btn-primary' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                 discipline_path(@discipline),
                 :method => 'delete',
@@ -23,6 +23,7 @@
 <% end %>
 <br/><br/>
   <%= link_to 'Novo comentario', new_comment_discipline_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-comment', :class => 'btn btn-info'} %>
+</div>
 
 
 <div id="modal-comment" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true"></div>

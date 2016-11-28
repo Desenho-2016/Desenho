@@ -49,10 +49,15 @@ body .page-header {
   text-align: center;
 }
 
-body > dl {
+.dl-horizontal-profile{
   font-size: 17px;
-  padding-left: 550px;
-  margin-top: -90px;
+  padding-left: 656px;
+  margin-top: -120px;
+}
+
+.dl-horizontal{
+  font-size: 17px;
+  padding-left: 525px;
 }
 
 .user-image {
@@ -62,11 +67,15 @@ body > dl {
   margin-left: 242px;
 }
 
-body > div.buttons-profile{
-  margin-top: 70px;
-  margin-left: 655px;
+body > div.buttons{
+  margin-top: 60px;
+  margin-left: 584px;
 }
 
-body > div.buttons-profile > a.btn.btn-primary > span, body > div.buttons-profile > a.btn.btn-danger > span {
+.btn-primary, .btn-danger {
   color: #fff !important;
+}
+
+a:hover {
+	background-color: transparent;
 }
